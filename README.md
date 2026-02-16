@@ -27,6 +27,11 @@ lovelace:
 Por defeito, o cartão procura uma imagem em `/local/cardbomba.jpg`.
 Deverá fazer upload da sua imagem de fundo para a pasta `www` do seu Home Assistant e configurar o caminho no editor visual do cartão.
 
+### Download das Imagens
+Pode descarregar as imagens de exemplo diretamente do repositório:
+- [Imagem de Fundo Principal (BombaGold.png)](https://github.com/sfelectronica/bomba-calor-card/blob/main/BombaGold.png)
+- [Imagem da Bomba (pumpgold.png)](https://github.com/sfelectronica/bomba-calor-card/blob/main/pumpgold.png)
+
 ## Funcionalidades
 
 * Editor Visual completo.
@@ -34,3 +39,8 @@ Deverá fazer upload da sua imagem de fundo para a pasta `www` do seu Home Assis
 * Animações de ventiladores e bombas.
 * Suporte a tanques de água.
 * Grelha de posicionamento para facilitar a configuração.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o ficheiro [LICENSE](LICENSE) para mais detalhes.
+Basicamente: pode usar, modificar e distribuir livremente, mas sem garantias de funcionamento ou responsabilidade por parte do autor.
