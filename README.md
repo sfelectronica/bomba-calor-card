@@ -45,11 +45,39 @@ Pode descarregar as imagens de exemplo diretamente do repositório:
 
 ## Funcionalidades
 
-* Editor Visual completo.
-* Animações de fluxo (tubos).
-* Animações de ventiladores e bombas.
-* Suporte a tanques de água.
-* Grelha de posicionamento para facilitar a configuração.
+Este cartão oferece um conjunto robusto de ferramentas para criar esquemas hidráulicos e térmicos animados:
+
+### 1. Editor Visual Integrado
+*   **Configuração "Point-and-Click":** Clique diretamente na imagem de pré-visualização para posicionar sensores, bombas e ventiladores.
+*   **Ferramenta de Desenho de Tubos:** Desenhe caminhos complexos e curvos (Curvas de Bézier) clicando na imagem, com ajuste de tensão das curvas.
+*   **Drag-and-Drop:** Reordene as entidades na lista arrastando-as.
+*   **Grelha de Guias:** Grelha auxiliar para alinhamento preciso dos elementos.
+
+### 2. Gestão de Entidades
+*   Suporte para múltiplos sensores (temperaturas, pressões, consumos).
+*   Personalização completa: Nome, Ícone, Cor do Texto, Cor do Ícone e Cor de Fundo (Badge).
+*   Ajuste de tamanho de fonte individual.
+*   Opção para ocultar rótulos ou ícones.
+*   **Switch Principal:** Botão dedicado para ligar/desligar bomba de recirculação com indicador de estado visual.
+
+### 3. Animações de Fluxo (Tubagens)
+Crie representações visuais do fluido a passar nos tubos:
+*   **Estilos de Linha:** Tracejado (Dashes), Pontos (Dots) ou **Shimmer** (Efeito de brilho/líquido fluído).
+*   **Gradientes:** Defina cor inicial e final para simular aquecimento ou arrefecimento ao longo do tubo.
+*   **Lógica de Ativação:** As animações podem ser ativadas pelo estado da entidade (ex: "on") ou por um **Limiar Numérico** (ex: ativar apenas se potência > 20W).
+*   Controlo de velocidade, largura e tamanho do rastro.
+
+### 4. Componentes Dinâmicos
+*   **Ventiladores:**
+    *   Simulação 3D com ajuste de inclinação (Tilt) e perspetiva (Skew).
+    *   Rotação animada com velocidade ajustável.
+    *   Opção de rotação inversa.
+*   **Bombas Circuladoras:**
+    *   Animação de rotor giratório.
+    *   Suporte para **Imagens Personalizadas** (carregue a sua própria imagem de bomba que irá rodar).
+*   **Tanques de Água:**
+    *   Visualização de reservatórios com efeito de bolhas ascendentes animadas.
+    *   Cores e opacidade configuráveis.
 
 ## Licença
 
