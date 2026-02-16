@@ -4,6 +4,9 @@
 
 Um cartão personalizado para Home Assistant focado na visualização de sistemas de Bomba de Calor, com animações de fluxo, ventiladores e tubagens.
 
+<!-- Substitua 'preview.gif' pelo nome do seu ficheiro gif após fazer upload para o GitHub -->
+![Preview do Cartão em Funcionamento](preview.gif)
+
 ## Instalação via HACS
 
 Clique no botão acima "Open in HACS" ou siga os passos manuais:
