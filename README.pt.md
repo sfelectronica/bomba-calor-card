@@ -1,34 +1,34 @@
 <div align="right">
-  <b>🇺🇸 English</b> | <a href="README.pt.md">🇵🇹 Português</a>
+  <a href="README.md">🇺🇸 English</a> | <b>🇵🇹 Português</b>
 </div>
 
 # Bomba de Calor Card
 
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=sfelectronica&repository=bomba-calor-card&category=plugin)
 
-A custom Home Assistant card focused on visualizing Heat Pump systems, featuring flow animations, fans, and piping.
+Um cartão personalizado para Home Assistant focado na visualização de sistemas de Bomba de Calor, com animações de fluxo, ventiladores e tubagens.
 
-<!-- Replace 'preview.gif' with your gif filename after uploading to GitHub -->
-![Card Preview](preview.gif)
+<!-- Substitua 'preview.gif' pelo nome do seu ficheiro gif após fazer upload para o GitHub -->
+![Preview do Cartão em Funcionamento](preview.gif)
 
-## Installation via HACS
+## Instalação via HACS
 
-Click the "Open in HACS" button above or follow the manual steps:
+Clique no botão acima "Open in HACS" ou siga os passos manuais:
 
-1. Ensure HACS is installed.
-2. Go to **HACS** > **Frontend**.
-3. Click the 3-dot menu in the top right corner -> **Custom repositories**.
-4. Add this GitHub repository URL: `https://github.com/sfelectronica/bomba-calor-card`
-5. Category: **Lovelace**.
-6. Click **Add** and then install the card.
+1. Certifique-se de que tem o [HACS](https://hacs.xyz/) instalado.
+2. Vá a **HACS** > **Frontend**.
+3. Clique no menu de 3 pontos no canto superior direito -> **Custom repositories**.
+4. Adicione o URL deste repositório GitHub: `https://github.com/sfelectronica/bomba-calor-card`
+5. Categoria: **Lovelace**.
+6. Clique em **Add** e depois instale o cartão.
 
-## Manual Installation
+## Instalação Manual
 
-1. Download the `bomba-calor-card.js` file from this repository.
-2. Copy the file to the `/config/www/community/bomba-calor-card/` folder in your Home Assistant (create the folder if it doesn't exist).
-3. Add the resource to your Dashboard.
+1. Descarregue o ficheiro `bomba-calor-card.js` deste repositório.
+2. Copie o ficheiro para a pasta `/config/www/community/bomba-calor-card/` no seu Home Assistant (crie a pasta se não existir).
+3. Adicione o recurso ao seu Dashboard.
 
-If using YAML mode (`configuration.yaml`), add the following:
+Se usar o modo YAML (`configuration.yaml`), adicione o seguinte:
 
 ```yaml
 lovelace:
@@ -44,8 +44,8 @@ Deverá fazer upload da sua imagem de fundo para a pasta `www` do seu Home Assis
 
 ### Download das Imagens
 Pode descarregar as imagens de exemplo diretamente do repositório:
-- [Imagem de Fundo Principal (BombaGold.png)](https://github.com/sfelectronica/bomba-calor-card/blob/main/BombaGold.png)
-- [Imagem da Bomba (pumpgold.png)](https://github.com/sfelectronica/bomba-calor-card/blob/main/pumpgold.png)
+- Imagem de Fundo Principal (BombaGold.png)
+- Imagem da Bomba (pumpgold.png)
 
 ## Funcionalidades
 
@@ -90,5 +90,5 @@ Crie representações visuais do fluido a passar nos tubos:
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT - veja o ficheiro [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a licença MIT - veja o ficheiro LICENSE para mais detalhes.
 Basicamente: pode usar, modificar e distribuir livremente, mas sem garantias de funcionamento ou responsabilidade por parte do autor.
