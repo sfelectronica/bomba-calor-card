@@ -52,6 +52,8 @@ Este cartão oferece um conjunto robusto de ferramentas para criar esquemas hidr
 *   **Ferramenta de Desenho de Tubos:** Desenhe caminhos complexos e curvos (Curvas de Bézier) clicando na imagem, com ajuste de tensão das curvas.
 *   **Drag-and-Drop:** Reordene as entidades na lista arrastando-as.
 *   **Grelha de Guias:** Grelha auxiliar para alinhamento preciso dos elementos.
+*   **Backup e Restauro:** Exporte e importe a configuração completa do cartão em formato JSON.
+*   **Multi-Idioma:** Interface disponível em Português, Inglês, Espanhol, Francês e Alemão.
 
 ### 2. Gestão de Entidades
 *   Suporte para múltiplos sensores (temperaturas, pressões, consumos).
@@ -59,13 +61,16 @@ Este cartão oferece um conjunto robusto de ferramentas para criar esquemas hidr
 *   Ajuste de tamanho de fonte individual.
 *   Opção para ocultar rótulos ou ícones.
 *   **Switch Principal:** Botão dedicado para ligar/desligar bomba de recirculação com indicador de estado visual.
+*   **Cores Dinâmicas:** Altere a cor do ícone automaticamente com base em valores limite (ex: Azul se < 10º, Vermelho se > 60º).
+*   **Estilo de Fonte:** Opção para escolher entre peso de fonte Normal ou Negrito (Bold).
 
 ### 3. Animações de Fluxo (Tubagens)
 Crie representações visuais do fluido a passar nos tubos:
-*   **Estilos de Linha:** Tracejado (Dashes), Pontos (Dots) ou **Shimmer** (Efeito de brilho/líquido fluído).
+*   **Estilos de Linha:** Tracejado (Dashes), Pontos (Dots), **Shimmer** (Brilho), **Pulse** (Pulsação) e **Comet** (Cometa).
 *   **Gradientes:** Defina cor inicial e final para simular aquecimento ou arrefecimento ao longo do tubo.
 *   **Lógica de Ativação:** As animações podem ser ativadas pelo estado da entidade (ex: "on") ou por um **Limiar Numérico** (ex: ativar apenas se potência > 20W).
 *   Controlo de velocidade, largura e tamanho do rastro.
+*   **Modo Baixo Desempenho:** Opção para desativar efeitos pesados (blur) para maior fluidez em dispositivos antigos.
 
 ### 4. Componentes Dinâmicos
 *   **Ventiladores:**

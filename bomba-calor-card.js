@@ -1,4 +1,329 @@
-console.info("%c BOMBA-CALOR-CARD %c 1.0.0 ", "color: white; background: #2681DC; font-weight: bold;", "color: #2681DC; background: white; font-weight: bold;");
+/*
+ * Bomba de Calor Card
+ * License: MIT
+ * Author: Jose S
+ * Repo: https://github.com/sfelectronica/bomba-calor-card
+ */
+
+console.info("%c BOMBA-CALOR-CARD %c 1.1.5 ", "color: white; background: #2681DC; font-weight: bold;", "color: #2681DC; background: white; font-weight: bold;");
+
+const translations = {
+  pt: {
+    "common.image": "Imagem",
+    "common.opacity": "Opacidade (0-1)",
+    "common.badge_opacity": "Transparência do Badge (0-1)",
+    "common.view_box": "View Box (SVG)",
+    "common.show_grid": "Mostrar Grelha de Guias",
+    "common.left": "Esquerda (%)",
+    "common.top": "Topo (%)",
+    "common.color": "Cor",
+    "common.size": "Tamanho",
+    "common.state": "Estado",
+    "common.speed": "Velocidade (s)",
+    "common.threshold": "Limiar (>W)",
+    "common.remove": "Remover",
+    "common.add": "Adicionar",
+    "common.position": "Definir Posição",
+    "common.visible": "Ver",
+    "common.label": "Rótulo",
+    "common.name": "Nome",
+    "common.background": "Fundo",
+    "common.icon": "Ícone",
+    "common.icon_color": "Cor Icon",
+    "common.font_weight": "Peso da Fonte",
+    "common.trigger": "Entidade Gatilho",
+    "common.color_start": "Cor Início",
+    "common.color_end": "Cor Fim",
+    "common.width": "Largura",
+    "common.style": "Estilo",
+    "common.path": "Path SVG (d)",
+    "common.set_path": "Definir Caminho na Imagem",
+    "common.dash_array": "Dash Array (ex: 10 5)",
+    "common.shimmer_size": "Tamanho do Brilho (%)",
+    "common.bubbles_color": "Cor Bolhas",
+    "common.tilt": "Inclinação (0-1)",
+    "common.rotation": "Rotação",
+    "common.skew": "Skew",
+    "common.stroke_color": "Cor Traço",
+    "common.stroke_width": "Largura Traço",
+    "common.reverse": "Inverter Rotação",
+    "common.image_url": "Imagem URL (Opcional)",
+    "common.view_box_desc": "Define a área de coordenadas do SVG. Ex: '0 0 100 180' cria uma grelha de 100x180 unidades sobre a imagem.",
+    "editor.switch": "Configuração do Switch",
+    "editor.low_performance": "Modo Baixo Desempenho (Sem Blur)",
+    "editor.switch_entity": "Switch da bomba",
+    "editor.language_settings": "Idiomas",
+    "editor.select_language": "Selecione o Idioma",
+    "editor.language_label": "Idioma / Language",
+    "editor.backup": "Backup / Restore",
+    "editor.export": "Exportar Configuração (JSON)",
+    "editor.import": "Importar Configuração (JSON)",
+    "editor.import_success": "Configuração importada com sucesso!",
+    "editor.import_error": "Erro ao importar configuração.",
+    "editor.entities": "Entidades",
+    "editor.animations": "Animações (Flows)",
+    "editor.tanks": "Tanques de Água",
+    "editor.fans": "Ventiladores",
+    "editor.pumps": "Bombas",
+    "editor.entity": "Entidade",
+    "editor.threshold_low": "Valor < X",
+    "editor.threshold_high": "Valor > X",
+    "editor.color_low": "Cor < X",
+    "editor.color_high": "Cor > X",
+  },
+  en: {
+    "common.image": "Image",
+    "common.opacity": "Opacity (0-1)",
+    "common.badge_opacity": "Badge Opacity (0-1)",
+    "common.view_box": "View Box (SVG)",
+    "common.show_grid": "Show Guide Grid",
+    "common.left": "Left (%)",
+    "common.top": "Top (%)",
+    "common.color": "Color",
+    "common.size": "Size",
+    "common.state": "State",
+    "common.speed": "Speed (s)",
+    "common.threshold": "Threshold (>W)",
+    "common.remove": "Remove",
+    "common.add": "Add",
+    "common.position": "Set Position",
+    "common.visible": "Show",
+    "common.label": "Label",
+    "common.name": "Name",
+    "common.background": "Background",
+    "common.icon": "Icon",
+    "common.icon_color": "Icon Color",
+    "common.font_weight": "Font Weight",
+    "common.trigger": "Trigger Entity",
+    "common.color_start": "Start Color",
+    "common.color_end": "End Color",
+    "common.width": "Width",
+    "common.style": "Style",
+    "common.path": "SVG Path (d)",
+    "common.set_path": "Set Path on Image",
+    "common.dash_array": "Dash Array (ex: 10 5)",
+    "common.shimmer_size": "Shimmer Size (%)",
+    "common.bubbles_color": "Bubbles Color",
+    "common.tilt": "Tilt (0-1)",
+    "common.rotation": "Rotation",
+    "common.skew": "Skew",
+    "common.stroke_color": "Stroke Color",
+    "common.stroke_width": "Stroke Width",
+    "common.reverse": "Reverse Rotation",
+    "common.image_url": "Image URL (Optional)",
+    "common.view_box_desc": "Defines the SVG coordinate area. Ex: '0 0 100 180' creates a 100x180 unit grid over the image.",
+    "editor.switch": "Switch Configuration",
+    "editor.low_performance": "Low Performance Mode (No Blur)",
+    "editor.switch_entity": "Pump Switch",
+    "editor.language_settings": "Languages",
+    "editor.select_language": "Select Language",
+    "editor.language_label": "Language",
+    "editor.backup": "Backup / Restore",
+    "editor.export": "Export Config (JSON)",
+    "editor.import": "Import Config (JSON)",
+    "editor.import_success": "Configuration imported successfully!",
+    "editor.import_error": "Error importing configuration.",
+    "editor.entities": "Entities",
+    "editor.animations": "Animations (Flows)",
+    "editor.tanks": "Water Tanks",
+    "editor.fans": "Fans",
+    "editor.pumps": "Pumps",
+    "editor.entity": "Entity",
+    "editor.threshold_low": "Value < X",
+    "editor.threshold_high": "Value > X",
+    "editor.color_low": "Color < X",
+    "editor.color_high": "Color > X",
+  },
+  es: {
+    "common.image": "Imagen",
+    "common.opacity": "Opacidad (0-1)",
+    "common.badge_opacity": "Opacidad del Badge (0-1)",
+    "common.view_box": "View Box (SVG)",
+    "common.show_grid": "Mostrar Cuadrícula",
+    "common.left": "Izquierda (%)",
+    "common.top": "Arriba (%)",
+    "common.color": "Color",
+    "common.size": "Tamaño",
+    "common.state": "Estado",
+    "common.speed": "Velocidad (s)",
+    "common.threshold": "Umbral (>W)",
+    "common.remove": "Eliminar",
+    "common.add": "Añadir",
+    "common.position": "Definir Posición",
+    "common.visible": "Ver",
+    "common.label": "Etiqueta",
+    "common.name": "Nombre",
+    "common.background": "Fondo",
+    "common.icon": "Ícono",
+    "common.icon_color": "Color Ícono",
+    "common.font_weight": "Peso de Fuente",
+    "common.trigger": "Entidad Disparador",
+    "common.color_start": "Color Inicio",
+    "common.color_end": "Color Fin",
+    "common.width": "Ancho",
+    "common.style": "Estilo",
+    "common.path": "Trayecto SVG (d)",
+    "common.set_path": "Definir Trayecto en Imagen",
+    "common.dash_array": "Array de Guiones (ex: 10 5)",
+    "common.shimmer_size": "Tamaño del Brillo (%)",
+    "common.bubbles_color": "Color Burbujas",
+    "common.tilt": "Inclinación (0-1)",
+    "common.rotation": "Rotación",
+    "common.skew": "Sesgar (Skew)",
+    "common.stroke_color": "Color Trazo",
+    "common.stroke_width": "Ancho Trazo",
+    "common.reverse": "Invertir Rotación",
+    "common.image_url": "URL Imagen (Opcional)",
+    "common.view_box_desc": "Define el área de coordenadas SVG. Ej: '0 0 100 180' crea una cuadrícula de 100x180 unidades.",
+    "editor.switch": "Configuración del Interruptor",
+    "editor.low_performance": "Modo Bajo Rendimiento (Sin Blur)",
+    "editor.switch_entity": "Interruptor Bomba",
+    "editor.language_settings": "Idiomas",
+    "editor.select_language": "Seleccionar Idioma",
+    "editor.language_label": "Idioma / Language",
+    "editor.backup": "Copia de Seguridad",
+    "editor.export": "Exportar Configuración (JSON)",
+    "editor.import": "Importar Configuración (JSON)",
+    "editor.import_success": "¡Configuración importada con éxito!",
+    "editor.import_error": "Error al importar la configuración.",
+    "editor.entities": "Entidades",
+    "editor.animations": "Animaciones",
+    "editor.tanks": "Tanques de Agua",
+    "editor.fans": "Ventiladores",
+    "editor.pumps": "Bombas",
+    "editor.entity": "Entidad",
+    "editor.threshold_low": "Valor < X",
+    "editor.threshold_high": "Valor > X",
+    "editor.color_low": "Color < X",
+    "editor.color_high": "Color > X",
+  },
+  fr: {
+    "common.image": "Image",
+    "common.opacity": "Opacité (0-1)",
+    "common.badge_opacity": "Opacité du Badge (0-1)",
+    "common.view_box": "View Box (SVG)",
+    "common.show_grid": "Afficher la Grille",
+    "common.left": "Gauche (%)",
+    "common.top": "Haut (%)",
+    "common.color": "Couleur",
+    "common.size": "Taille",
+    "common.state": "État",
+    "common.speed": "Vitesse (s)",
+    "common.threshold": "Seuil (>W)",
+    "common.remove": "Supprimer",
+    "common.add": "Ajouter",
+    "common.position": "Définir la Position",
+    "common.visible": "Voir",
+    "common.label": "Étiquette",
+    "common.name": "Nom",
+    "common.background": "Fond",
+    "common.icon": "Icône",
+    "common.icon_color": "Couleur Icône",
+    "common.font_weight": "Poids de la Police",
+    "common.trigger": "Entité Déclencheur",
+    "common.color_start": "Couleur Début",
+    "common.color_end": "Couleur Fin",
+    "common.width": "Largeur",
+    "common.style": "Style",
+    "common.path": "Chemin SVG (d)",
+    "common.set_path": "Définir Chemin sur Image",
+    "common.dash_array": "Tableau de Tirets (ex: 10 5)",
+    "common.shimmer_size": "Taille du Scintillement (%)",
+    "common.bubbles_color": "Couleur Bulles",
+    "common.tilt": "Inclinaison (0-1)",
+    "common.rotation": "Rotation",
+    "common.skew": "Biais (Skew)",
+    "common.stroke_color": "Couleur Trait",
+    "common.stroke_width": "Largeur Trait",
+    "common.reverse": "Inverser Rotation",
+    "common.image_url": "URL Image (Optionnel)",
+    "common.view_box_desc": "Définit la zone de coordonnées SVG. Ex: '0 0 100 180' crée une grille de 100x180 unités.",
+    "editor.switch": "Configuration de l'Interrupteur",
+    "editor.low_performance": "Mode Basse Performance (Sans Flou)",
+    "editor.switch_entity": "Interrupteur Pompe",
+    "editor.language_settings": "Langues",
+    "editor.select_language": "Choisir la Langue",
+    "editor.language_label": "Langue / Language",
+    "editor.backup": "Sauvegarde / Restauration",
+    "editor.export": "Exporter Configuration (JSON)",
+    "editor.import": "Importer Configuration (JSON)",
+    "editor.import_success": "Configuration importée avec succès!",
+    "editor.import_error": "Erreur lors de l'importation.",
+    "editor.entities": "Entités",
+    "editor.animations": "Animations",
+    "editor.tanks": "Réservoirs d'Eau",
+    "editor.fans": "Ventilateurs",
+    "editor.pumps": "Pompes",
+    "editor.entity": "Entité",
+    "editor.threshold_low": "Valeur < X",
+    "editor.threshold_high": "Valeur > X",
+    "editor.color_low": "Couleur < X",
+    "editor.color_high": "Couleur > X",
+  },
+  de: {
+    "common.image": "Bild",
+    "common.opacity": "Deckkraft (0-1)",
+    "common.badge_opacity": "Badge Deckkraft (0-1)",
+    "common.view_box": "View Box (SVG)",
+    "common.show_grid": "Gitter Anzeigen",
+    "common.left": "Links (%)",
+    "common.top": "Oben (%)",
+    "common.color": "Farbe",
+    "common.size": "Größe",
+    "common.state": "Status",
+    "common.speed": "Geschwindigkeit (s)",
+    "common.threshold": "Schwellenwert (>W)",
+    "common.remove": "Entfernen",
+    "common.add": "Hinzufügen",
+    "common.position": "Position Festlegen",
+    "common.visible": "Sichtbar",
+    "common.label": "Etikett",
+    "common.name": "Name",
+    "common.background": "Hintergrund",
+    "common.icon": "Symbol",
+    "common.icon_color": "Symbolfarbe",
+    "common.font_weight": "Schriftgewicht",
+    "common.trigger": "Auslöser-Entität",
+    "common.color_start": "Startfarbe",
+    "common.color_end": "Endfarbe",
+    "common.width": "Breite",
+    "common.style": "Stil",
+    "common.path": "SVG Pfad (d)",
+    "common.set_path": "Pfad auf Bild Setzen",
+    "common.dash_array": "Strichliste (z.B. 10 5)",
+    "common.shimmer_size": "Schimmergröße (%)",
+    "common.bubbles_color": "Blasenfarbe",
+    "common.tilt": "Neigung (0-1)",
+    "common.rotation": "Rotation",
+    "common.skew": "Neigen (Skew)",
+    "common.stroke_color": "Strichfarbe",
+    "common.stroke_width": "Strichstärke",
+    "common.reverse": "Rotation Umkehren",
+    "common.image_url": "Bild URL (Optional)",
+    "common.view_box_desc": "Definiert den SVG-Koordinatenbereich. Bsp: '0 0 100 180' erstellt ein 100x180 Einheitenraster.",
+    "editor.switch": "Schalter Konfiguration",
+    "editor.low_performance": "Niedrige Leistung (Kein Blur)",
+    "editor.switch_entity": "Pumpenschalter",
+    "editor.language_settings": "Sprachen",
+    "editor.select_language": "Sprache Auswählen",
+    "editor.language_label": "Sprache / Language",
+    "editor.backup": "Backup / Wiederherstellung",
+    "editor.export": "Konfiguration Exportieren",
+    "editor.import": "Konfiguration Importieren",
+    "editor.import_success": "Konfiguration erfolgreich importiert!",
+    "editor.import_error": "Fehler beim Importieren.",
+    "editor.entities": "Entitäten",
+    "editor.animations": "Animationen",
+    "editor.tanks": "Wassertanks",
+    "editor.fans": "Lüfter",
+    "editor.pumps": "Pumpen",
+    "editor.entity": "Entität",
+    "editor.threshold_low": "Wert < X",
+    "editor.threshold_high": "Wert > X",
+    "editor.color_low": "Farbe < X",
+    "editor.color_high": "Farbe > X",
+  }
+};
 
 class BombaCalorCard extends HTMLElement {
   setConfig(config) {
@@ -12,6 +337,11 @@ class BombaCalorCard extends HTMLElement {
     if (!this.config.badge_colors) this.config.badge_colors = [];
     if (!this.config.icon_colors) this.config.icon_colors = [];
     if (!this.config.font_sizes) this.config.font_sizes = [];
+    if (!this.config.font_weights) this.config.font_weights = [];
+    if (!this.config.icon_thresholds_low) this.config.icon_thresholds_low = [];
+    if (!this.config.icon_thresholds_high) this.config.icon_thresholds_high = [];
+    if (!this.config.icon_colors_low) this.config.icon_colors_low = [];
+    if (!this.config.icon_colors_high) this.config.icon_colors_high = [];
     if (!this.config.visible) this.config.visible = [];
     if (!this.config.show_labels) this.config.show_labels = [];
     if (!this.config.positions) this.config.positions = [];
@@ -21,9 +351,11 @@ class BombaCalorCard extends HTMLElement {
     if (this.config.badge_opacity === undefined) this.config.badge_opacity = 0.4;
     if (this.config.image_opacity === undefined) this.config.image_opacity = 1;
     if (this.config.show_grid === undefined) this.config.show_grid = false;
+    if (this.config.low_performance === undefined) this.config.low_performance = false;
     if (!this.config.water_tanks) this.config.water_tanks = [];
     if (!this.config.fans) this.config.fans = [];
     if (!this.config.pumps) this.config.pumps = [];
+    if (!this.config.language) this.config.language = "auto";
 
     if (!this.shadowRoot) {
       this.attachShadow({ mode: "open" });
@@ -82,6 +414,30 @@ class BombaCalorCard extends HTMLElement {
         @keyframes stroke-flow {
           to { stroke-dashoffset: -400; }
         }
+
+        /* Novo Estilo: Pulse */
+        .pulse-active {
+          animation: pulse-anim var(--anim-speed, 1.5s) ease-in-out infinite alternate;
+        }
+        @keyframes pulse-anim {
+          0% { opacity: 0.3; }
+          100% { opacity: 1; }
+        }
+
+        /* Novo Estilo: Comet */
+        .comet-path {
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transition: opacity 0.3s;
+        }
+        .comet-active {
+          animation: comet-move var(--anim-speed, 1.5s) linear infinite;
+        }
+        @keyframes comet-move {
+          0% { stroke-dashoffset: 100; }
+          100% { stroke-dashoffset: -100; }
+        }
         
         /* Shimmer effect - igual ao HTML */
         .shimmer-path {
@@ -115,6 +471,7 @@ class BombaCalorCard extends HTMLElement {
           cursor: pointer;
           transform: translate(-50%, -50%);
           z-index: 2;
+          -webkit-font-smoothing: antialiased;
         }
         .entity-label {
           font-size: 0.7rem;
@@ -134,7 +491,8 @@ class BombaCalorCard extends HTMLElement {
           gap: 4px;
           padding: 2px 6px;
           border-radius: 10px;
-          backdrop-filter: blur(2px);
+          backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .switch {
@@ -238,6 +596,7 @@ class BombaCalorCard extends HTMLElement {
     this.animEls = [];
     (this.config.animations || []).forEach((anim, i) => {
       if (!anim.path) return;
+      const isLowPerf = this.config.low_performance;
       const style = anim.style || 'dashes';
       
       let strokeColor = anim.color || "#2681DC";
@@ -295,17 +654,19 @@ class BombaCalorCard extends HTMLElement {
         const filterId = `shimmer-blur-${i}-${Date.now()}`;
         
         // Filter para blur (bordas suaves)
-        const filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
-        filter.setAttribute("id", filterId);
-        filter.setAttribute("x", "-50%");
-        filter.setAttribute("y", "-50%");
-        filter.setAttribute("width", "250%");
-        filter.setAttribute("height", "250%");
-        
-        const blur = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
-        blur.setAttribute("stdDeviation", "2");
-        filter.appendChild(blur);
-        defs.appendChild(filter);
+        if (!isLowPerf) {
+            const filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
+            filter.setAttribute("id", filterId);
+            filter.setAttribute("x", "-50%");
+            filter.setAttribute("y", "-50%");
+            filter.setAttribute("width", "250%");
+            filter.setAttribute("height", "250%");
+            
+            const blur = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
+            blur.setAttribute("stdDeviation", "2");
+            filter.appendChild(blur);
+            defs.appendChild(filter);
+        }
         
         // Máscara com stroke animado
         const mask = document.createElementNS("http://www.w3.org/2000/svg", "mask");
@@ -320,7 +681,9 @@ class BombaCalorCard extends HTMLElement {
         maskPath.setAttribute("pathLength", pathLength);
         const dashVis = parseFloat(anim.mask_dash || "30");
         maskPath.setAttribute("stroke-dasharray", `${dashVis} ${100 - dashVis}`);
-        maskPath.setAttribute("filter", `url(#${filterId})`);
+        if (!isLowPerf) {
+            maskPath.setAttribute("filter", `url(#${filterId})`);
+        }
         maskPath.classList.add("shimmer-gradient-path");
         maskPath.style.setProperty('--anim-speed', `${anim.speed || 1.5}s`);
         
@@ -361,6 +724,94 @@ class BombaCalorCard extends HTMLElement {
           basePath: basePath
         });
         
+      } else if (style === 'pulse') {
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", anim.path);
+        path.setAttribute("stroke", strokeColor);
+        path.setAttribute("stroke-width", anim.width || 2);
+        path.setAttribute("stroke-linecap", "round");
+        path.setAttribute("fill", "none");
+        path.style.opacity = "0.1";
+        path.style.setProperty('--anim-speed', `${anim.speed || 1.5}s`);
+        svgLayer.appendChild(path);
+        this.animEls.push({ config: anim, type: 'pulse', el: path });
+      } else if (style === 'comet') {
+        const pathLength = 100;
+        
+        // 1. Base Path (Trilho Fino)
+        const basePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        basePath.setAttribute("d", anim.path);
+        basePath.setAttribute("stroke", strokeColor);
+        basePath.setAttribute("stroke-width", anim.width || 2);
+        basePath.setAttribute("fill", "none");
+        basePath.style.opacity = "0.1";
+        svgLayer.appendChild(basePath);
+
+        // 2. Cauda (Máscara com Blur)
+        const maskId = `comet-mask-${i}-${Date.now()}`;
+        const filterId = `comet-blur-${i}-${Date.now()}`;
+        
+        if (!isLowPerf) {
+            const filter = document.createElementNS("http://www.w3.org/2000/svg", "filter");
+            filter.setAttribute("id", filterId);
+            const blur = document.createElementNS("http://www.w3.org/2000/svg", "feGaussianBlur");
+            blur.setAttribute("stdDeviation", "2"); // Suavidade da cauda
+            filter.appendChild(blur);
+            defs.appendChild(filter);
+        }
+
+        const mask = document.createElementNS("http://www.w3.org/2000/svg", "mask");
+        mask.setAttribute('id', maskId);
+        const maskPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        maskPath.setAttribute("d", anim.path);
+        maskPath.setAttribute("stroke", "white");
+        maskPath.setAttribute("stroke-width", (anim.width || 2) + 2);
+        maskPath.setAttribute("fill", "none");
+        maskPath.setAttribute("pathLength", pathLength);
+        maskPath.setAttribute("stroke-dasharray", "20 80"); // Comprimento da cauda (20%)
+        if (!isLowPerf) {
+            maskPath.setAttribute("filter", `url(#${filterId})`);
+        }
+        maskPath.classList.add("comet-path");
+        mask.appendChild(maskPath);
+        defs.appendChild(mask);
+
+        const tailGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        tailGroup.setAttribute("mask", `url(#${maskId})`);
+        const tailPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        tailPath.setAttribute("d", anim.path);
+        tailPath.setAttribute("stroke", strokeColor);
+        tailPath.setAttribute("stroke-width", anim.width || 2);
+        tailPath.setAttribute("fill", "none");
+        tailGroup.appendChild(tailPath);
+        svgLayer.appendChild(tailGroup);
+
+        // 3. Cabeça (Ponto Sólido)
+        const headPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        headPath.setAttribute("d", anim.path);
+        headPath.setAttribute("stroke", strokeColor);
+        headPath.setAttribute("stroke-width", anim.width || 2);
+        headPath.setAttribute("fill", "none");
+        headPath.setAttribute("pathLength", pathLength);
+        // Dasharray truque: 0(traço), 20(espaço), 1(cabeça), 79(espaço)
+        // Isto coloca a cabeça (1%) logo à frente da cauda (20%)
+        headPath.setAttribute("stroke-dasharray", "0 20 1 79"); 
+        headPath.setAttribute("stroke-linecap", "round");
+        headPath.classList.add("comet-path");
+        svgLayer.appendChild(headPath);
+        
+        const speed = `${anim.speed || 1.5}s`;
+        maskPath.style.setProperty('--anim-speed', speed);
+        headPath.style.setProperty('--anim-speed', speed);
+
+        this.animEls.push({ 
+            config: anim, 
+            type: 'comet', 
+            basePath, 
+            maskPath, 
+            tailGroup, 
+            headPath 
+        });
       } else {
         const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
         path.setAttribute("d", anim.path);
@@ -370,6 +821,7 @@ class BombaCalorCard extends HTMLElement {
         path.setAttribute("stroke-linecap", "round");
         path.classList.add("flow-path");
         path.style.opacity = "0.1";
+        path.style.setProperty('--anim-speed', `${anim.speed || 1.5}s`);
         svgLayer.appendChild(path);
         this.animEls.push({ config: anim, type: 'dash', el: path });
       }
@@ -501,6 +953,7 @@ class BombaCalorCard extends HTMLElement {
       const badgeColor = this.config.badge_colors[idx];
       const iconColor = this.config.icon_colors[idx] || "#ffffff";
       const fontSize = this.config.font_sizes[idx] || "";
+      const fontWeight = this.config.font_weights[idx] || "normal";
       const showLabel = this.config.show_labels[idx] !== false;
       const defPos = defaultPositions[idx] || { left: 5, top: 90 };
 
@@ -524,7 +977,7 @@ class BombaCalorCard extends HTMLElement {
       // Estrutura: Label (Nome) + Valor
       div.innerHTML = `
         ${showLabel ? `<div class="entity-label">${name}</div>` : ""}
-        <div class="entity-value" style="color: ${color}; background: ${bgStyle}; ${fontSize ? `font-size: ${fontSize};` : ''}">
+        <div class="entity-value" style="color: ${color}; background: ${bgStyle}; font-weight: ${fontWeight}; ${fontSize ? `font-size: ${fontSize};` : ''}">
           ${icon ? `<ha-icon icon="${icon}" style="--mdc-icon-size: 14px; color: ${iconColor};"></ha-icon>` : ""}
           <span class="state-value">--</span>
         </div>
@@ -536,7 +989,8 @@ class BombaCalorCard extends HTMLElement {
       // Guardamos referência para o elemento do valor para atualizar depois
       const valEl = div.querySelector(".state-value");
       const labelEl = div.querySelector(".entity-label");
-      this.entityEls.push({ ent, el: valEl, labelEl, idx });
+      const iconEl = div.querySelector("ha-icon");
+      this.entityEls.push({ ent, el: valEl, labelEl, iconEl, idx });
     });
 
     // switch
@@ -626,7 +1080,7 @@ class BombaCalorCard extends HTMLElement {
   updateStates() {
     if (!this._hass || !this.entityEls) return;
 
-    this.entityEls.forEach(({ ent, el, labelEl, idx }) => {
+    this.entityEls.forEach(({ ent, el, labelEl, iconEl, idx }) => {
       const st = this._hass.states[ent];
       if (!st) {
         el.textContent = ent;
@@ -643,12 +1097,48 @@ class BombaCalorCard extends HTMLElement {
 
       const unit = st.attributes.unit_of_measurement || "";
       el.textContent = `${value} ${unit}`.trim();
+
+      // Lógica de Cor Dinâmica do Ícone
+      if (iconEl) {
+        const defaultColor = this.config.icon_colors[idx] || "#ffffff";
+        
+        const lowT_val = this.config.icon_thresholds_low[idx];
+        const highT_val = this.config.icon_thresholds_high[idx];
+        
+        const lowT = (lowT_val !== null && lowT_val !== "" && lowT_val !== undefined) ? parseFloat(String(lowT_val).replace(',', '.')) : NaN;
+        const highT = (highT_val !== null && highT_val !== "" && highT_val !== undefined) ? parseFloat(String(highT_val).replace(',', '.')) : NaN;
+
+        const lowC = this.config.icon_colors_low[idx] || "#448aff";
+        const highC = this.config.icon_colors_high[idx] || "#ff5252";
+        
+        const stateStr = String(st.state);
+        const val = parseFloat(stateStr.replace(',', '.'));
+
+        if (stateStr.toLowerCase() === "on") {
+            iconEl.style.color = "#ffc107"; // Amarelo (Ativo)
+        } else if (!isNaN(val)) {
+            if (!isNaN(highT) && val > highT) {
+                iconEl.style.color = highC;
+            } else if (!isNaN(lowT) && val < lowT) {
+                iconEl.style.color = lowC;
+            } else {
+                iconEl.style.color = defaultColor;
+            }
+        } else {
+            iconEl.style.color = defaultColor;
+        }
+      }
     });
 
     // Atualizar Animações
-    this.animEls.forEach(({ config, el, type, groupEl, maskPathEl, basePath }) => {
+    this.animEls.forEach((animItem) => {
+      const { config, el, type, groupEl, maskPathEl, basePath, maskPath, tailGroup, headPath } = animItem;
       const stateObj = this._hass.states[config.entity];
       const isActive = this._isActive(config, stateObj);
+      
+      // Otimização: Só atualiza o DOM se o estado mudou
+      if (animItem._lastActive === isActive) return;
+      animItem._lastActive = isActive;
       
       if (type === 'shimmer') {
         // Controlar opacidade do grupo de brilho
@@ -664,10 +1154,29 @@ class BombaCalorCard extends HTMLElement {
           maskPathEl.style.strokeDashoffset = '100'; // Reset para início
         }
         
-        maskPathEl.style.setProperty('--anim-speed', `${config.speed || 1.5}s`);
+      } else if (type === 'pulse') {
+        if (isActive) {
+          el.classList.add("pulse-active");
+        } else {
+          el.classList.remove("pulse-active");
+          el.style.opacity = "0.1";
+        }
+      } else if (type === 'comet') {
+        if (isActive) {
+            maskPath.classList.add("comet-active");
+            headPath.classList.add("comet-active");
+            tailGroup.style.opacity = "1";
+            headPath.style.opacity = "1";
+            basePath.style.opacity = "0.2";
+        } else {
+            maskPath.classList.remove("comet-active");
+            headPath.classList.remove("comet-active");
+            tailGroup.style.opacity = "0";
+            headPath.style.opacity = "0";
+            basePath.style.opacity = "0.1";
+        }
       } else { // dash and dots
         el.style.opacity = isActive ? "1" : "0.1";
-        el.style.setProperty('--anim-speed', `${config.speed || 1.5}s`);
         isActive ? el.classList.add("flow-active") : el.classList.remove("flow-active");
       }
     });
@@ -734,46 +1243,51 @@ class BombaCalorCardEditor extends HTMLElement {
   constructor() {
     super();
     this._focusHandler = this._handleFocusEvent.bind(this);
+    this._isUpdatingValues = false;
+  }
+
+  _initializeConfig(config) {
+    this._config = JSON.parse(JSON.stringify(config));
+    
+    const defaults = {
+      image: "/local/cardbomba.jpg",
+      entities: [], names: [], colors: [], icons: [], badge_colors: [], icon_colors: [],
+      font_sizes: [], font_weights: [], icon_thresholds_low: [], icon_thresholds_high: [],
+      icon_colors_low: [], icon_colors_high: [], visible: [], show_labels: [], positions: [],
+      animations: [], water_tanks: [], fans: [], pumps: [],
+      view_box: "0 0 100 180",
+      switch_position: { left: 10, top: 50 },
+      flow_position: { left: 40, top: 55 },
+      badge_opacity: 0.4,
+      image_opacity: 1,
+      show_grid: false,
+      low_performance: false,
+      language: "auto"
+    };
+
+    for (const key in defaults) {
+      if (this._config[key] === undefined || this._config[key] === null) {
+        this._config[key] = defaults[key];
+      }
+    }
+
+    // Garante mínimo de 11 itens para as arrays de entidades
+    const entityArrays = ['entities', 'names', 'colors', 'icons', 'badge_colors', 'icon_colors', 'font_sizes', 'font_weights', 'icon_thresholds_low', 'icon_thresholds_high', 'icon_colors_low', 'icon_colors_high', 'visible', 'show_labels', 'positions'];
+    const defaultValues = {
+      entities: "", names: "", colors: "#ffffff", icons: "", badge_colors: "", icon_colors: "#ffffff",
+      font_sizes: "", font_weights: "normal", icon_thresholds_low: "", icon_thresholds_high: "",
+      icon_colors_low: "", icon_colors_high: "", visible: true, show_labels: true, positions: {}
+    };
+
+    while (this._config.entities.length < 11) {
+      entityArrays.forEach(key => {
+        this._config[key].push(defaultValues[key]);
+      });
+    }
   }
 
   setConfig(config) {
-    this._config = JSON.parse(JSON.stringify(config));
-    
-    if (!this._config.image) this._config.image = "/local/cardbomba.jpg";
-    if (!this._config.entities) this._config.entities = [];
-    if (!this._config.names) this._config.names = [];
-    if (!this._config.colors) this._config.colors = [];
-    if (!this._config.icons) this._config.icons = [];
-    if (!this._config.badge_colors) this._config.badge_colors = [];
-    if (!this._config.icon_colors) this._config.icon_colors = [];
-    if (!this._config.font_sizes) this._config.font_sizes = [];
-    if (!this._config.visible) this._config.visible = [];
-    if (!this._config.show_labels) this._config.show_labels = [];
-    if (!this._config.positions) this._config.positions = [];
-    if (!this._config.animations) this._config.animations = [];
-    if (!this._config.view_box) this._config.view_box = "0 0 100 180";
-    if (!this._config.switch_position) this._config.switch_position = { left: 10, top: 50 };
-    if (!this._config.flow_position) this._config.flow_position = { left: 40, top: 55 };
-    if (this._config.badge_opacity === undefined) this._config.badge_opacity = 0.4;
-    if (this._config.image_opacity === undefined) this._config.image_opacity = 1;
-    if (this._config.show_grid === undefined) this._config.show_grid = false;
-    if (!this._config.water_tanks) this._config.water_tanks = [];
-    if (!this._config.fans) this._config.fans = [];
-    if (!this._config.pumps) this._config.pumps = [];
-
-    // Garante mínimo de 11 itens
-    while (this._config.entities.length < 11) {
-      this._config.entities.push("");
-      this._config.names.push("");
-      this._config.colors.push("#ffffff");
-      this._config.icons.push("");
-      this._config.badge_colors.push("");
-      this._config.icon_colors.push("#ffffff");
-      this._config.font_sizes.push("");
-      this._config.visible.push(true);
-      this._config.show_labels.push(true);
-      this._config.positions.push({});
-    }
+    this._initializeConfig(config);
 
     if (!this.shadowRoot) {
       this.attachShadow({ mode: "open" });
@@ -811,6 +1325,14 @@ class BombaCalorCardEditor extends HTMLElement {
     }
   }
 
+  _localize(key) {
+    const forcedLang = this._config?.language;
+    const lang = (forcedLang && forcedLang !== 'auto' ? forcedLang : (this._hass?.language || "pt")).split("-")[0];
+    return (translations[lang] && translations[lang][key]) || 
+           (translations["pt"] && translations["pt"][key]) || 
+           key;
+  }
+
   render() {
     if (!this.shadowRoot) return;
 
@@ -824,8 +1346,8 @@ class BombaCalorCardEditor extends HTMLElement {
     const currentFans = this.shadowRoot.querySelectorAll(".fan-block").length;
     const currentPumps = this.shadowRoot.querySelectorAll(".pump-block").length;
     
-    // +2 blocos estáticos (Switch/Fluxo). Versão 3 adiciona preview e radios.
-    if (container && currentVersion === "14" && currentEntities === this._config.entities.length + 2 && currentAnims === this._config.animations.length && currentTanks === this._config.water_tanks.length && currentFans === this._config.fans.length && currentPumps === this._config.pumps.length) {
+    // +3 blocos estáticos (Switch/Idioma/Backup).
+    if (container && currentVersion === "18" && currentEntities === this._config.entities.length + 3 && currentAnims === this._config.animations.length && currentTanks === this._config.water_tanks.length && currentFans === this._config.fans.length && currentPumps === this._config.pumps.length) {
       this._updateValues();
       return;
     }
@@ -925,26 +1447,30 @@ class BombaCalorCardEditor extends HTMLElement {
         .preview-point { fill: red; stroke: white; stroke-width: 1px; }
         .preview-line { stroke: yellow; stroke-width: 2px; fill: none; stroke-dasharray: 4 2; }
       </style>
-      <div class="card-config" data-version="14">
+      <div class="card-config" data-version="18">
         <div class="row">
-          <label>Imagem</label>
+          <label>${this._localize("common.image")}</label>
           <input id="image">
         </div>
         <div class="row">
-          <label>Opacidade da Imagem (0-1)</label>
+          <label>${this._localize("common.opacity")}</label>
           <input id="image_opacity" type="number" min="0" max="1" step="0.1">
         </div>
         
         <div class="row">
-          <label>View Box (Coordenadas SVG: min-x min-y width height)</label>
+          <label>${this._localize("common.view_box")}</label>
           <input id="view_box">
           <div style="font-size: 0.7rem; color: #888; margin-top: 2px;">
-            Define a área de coordenadas do SVG. Ex: "0 0 100 180" cria uma grelha de 100x180 unidades sobre a imagem.
+            ${this._localize("common.view_box_desc")}
           </div>
         </div>
         <div class="row inline" style="align-items: center;">
-            <label style="width: auto; margin-right: 10px;">Mostrar Grelha de Guias</label>
+            <label style="width: auto; margin-right: 10px;">${this._localize("common.show_grid")}</label>
             <input id="show_grid" type="checkbox" style="width: auto;">
+        </div>
+        <div class="row inline" style="align-items: center;">
+            <label style="width: auto; margin-right: 10px;">${this._localize("editor.low_performance")}</label>
+            <input id="low_performance" type="checkbox" style="width: auto;">
         </div>
 
         <div id="posModal" class="modal">
@@ -979,26 +1505,26 @@ class BombaCalorCardEditor extends HTMLElement {
         </div>
 
         <div class="row">
-          <label>Transparência do Badge (0-1)</label>
+          <label>${this._localize("common.badge_opacity")}</label>
           <input id="badge_opacity" type="number" min="0" max="1" step="0.1">
         </div>
         
         <details class="entity-block" id="details_switch">
-          <summary class="item-title">Configuração do Switch</summary>
+          <summary class="item-title">${this._localize("editor.switch")}</summary>
           <div class="entity-content">
             <div class="row">
-               <button class="pos-btn" id="btn_switch">Selecionar Posição na Imagem</button>
+               <button class="pos-btn" id="btn_switch">${this._localize("common.position")}</button>
             </div>
             <div class="row">
-              <ha-entity-picker id="switch" label="Switch da bomba" domain-filter="switch"></ha-entity-picker>
+              <ha-entity-picker id="switch" label="${this._localize("editor.switch_entity")}" domain-filter="switch"></ha-entity-picker>
             </div>
             <div class="row inline">
               <div>
-                <label>Switch Left (%)</label>
+                <label>${this._localize("common.left")}</label>
                 <input id="switch_left" type="number" min="0" max="100">
               </div>
               <div>
-                <label>Switch Top (%)</label>
+                <label>${this._localize("common.top")}</label>
                 <input id="switch_top" type="number" min="0" max="100">
               </div>
             </div>
@@ -1006,25 +1532,34 @@ class BombaCalorCardEditor extends HTMLElement {
         </details>
 
         <details class="entity-block" id="details_flow">
-          <summary class="item-title">Configuração do Fluxo</summary>
+          <summary class="item-title">${this._localize("editor.language_settings")}</summary>
           <div class="entity-content">
             <div class="row">
-               <button class="pos-btn" id="btn_flow">Selecionar Posição na Imagem</button>
+                <label>${this._localize("editor.language_label")}</label>
+                <ha-select id="language" label="${this._localize("editor.select_language")}">
+                    <mwc-list-item value="auto">Auto (Home Assistant)</mwc-list-item>
+                    <mwc-list-item value="pt">Português</mwc-list-item>
+                    <mwc-list-item value="en">English</mwc-list-item>
+                    <mwc-list-item value="es">Español</mwc-list-item>
+                    <mwc-list-item value="fr">Français</mwc-list-item>
+                    <mwc-list-item value="de">Deutsch</mwc-list-item>
+                </ha-select>
+              </div>
             </div>
-            <div class="row inline">
-              <div>
-                <label>Fluxo Left (%)</label>
-                <input id="flow_left" type="number" min="0" max="100">
-              </div>
-              <div>
-                <label>Fluxo Top (%)</label>
-                <input id="flow_top" type="number" min="0" max="100">
-              </div>
+        </details>
+
+        <details class="entity-block" id="details_backup">
+          <summary class="item-title" style="background: #d32f2f;">${this._localize("editor.backup")}</summary>
+          <div class="entity-content">
+            <div class="row">
+              <button class="pos-btn" id="btn_export" style="background-color: #4caf50;">${this._localize("editor.export")}</button>
+              <button class="pos-btn" id="btn_import" style="background-color: #ff9800;">${this._localize("editor.import")}</button>
+              <input type="file" id="import_file" style="display: none" accept=".json">
             </div>
           </div>
         </details>
         
-        <div class="section-title">Entidades</div>
+        <div class="section-title">${this._localize("editor.entities")}</div>
         ${this._config.entities.map((_, i) => {
           const name = this._config.names[i];
           const label = name || `Nome ${i + 1}`;
@@ -1033,141 +1568,155 @@ class BombaCalorCardEditor extends HTMLElement {
           <details class="entity-block" id="details_ent_${i}" draggable="true" data-index="${i}">
             <summary class="item-title" id="summary${i}">Item ${i + 1} - ${label}</summary>
             <div class="entity-content">
-              <div class="row">
-                 <button class="pos-btn" id="btn_${i}">Selecionar Posição na Imagem</button>
-              </div>
-              <div class="row">
-                <ha-entity-picker id="ent${i}" label="Entidade ${i + 1}" allow-custom-entity></ha-entity-picker>
-              </div>
-              <div class="row inline" style="align-items: flex-end;">
-                <div style="width: auto; padding-right: 8px;">
-                  <label>Ver</label>
-                  <input id="vis${i}" type="checkbox" style="width: auto;">
+                <div class="row">
+                    <ha-entity-picker id="ent${i}" label="${this._localize("editor.entity")} ${i + 1}" allow-custom-entity></ha-entity-picker>
                 </div>
-                <div style="width: auto; padding-right: 8px;">
-                  <label>Rótulo</label>
-                  <input id="show_label${i}" type="checkbox" style="width: auto;">
+                <div class="row inline" style="align-items: center;">
+                    <input id="vis${i}" type="checkbox" style="width: auto; margin-right: 4px;">
+                    <label for="vis${i}" style="margin: 0; display: inline;">${this._localize("common.visible")}</label>
                 </div>
-                <div style="flex-grow: 2;">
-                  <label>Nome</label>
-                  <input id="name${i}">
+                <div class="row">
+                    <label>${this._localize("common.name")}</label>
+                    <input id="name${i}">
                 </div>
-                <div>
-                  <label>Cor</label>
-                  <input id="color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
+                <div class="row inline" style="align-items: center;">
+                    <input id="show_label${i}" type="checkbox" style="width: auto; margin-right: 4px;">
+                    <label for="show_label${i}" style="margin: 0; display: inline;">${this._localize("common.label")}</label>
                 </div>
-                <div>
-                  <label>Fundo</label>
-                  <input id="badge_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
+                <div class="row inline" style="align-items: flex-end;">
+                    <div style="flex-grow: 1;">
+                        <ha-icon-picker id="icon${i}" label="${this._localize("common.icon")}"></ha-icon-picker>
+                    </div>
+                    <div>
+                        <label>${this._localize("common.icon_color")}</label>
+                        <input id="icon_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
+                    </div>
                 </div>
-              </div>
-              <div class="row inline" style="align-items: flex-end;">
-                <div style="flex-grow: 1;">
-                  <ha-icon-picker id="icon${i}" label="Ícone"></ha-icon-picker>
+                <div class="row inline" style="align-items: flex-end; justify-content: space-between;">
+                    <div class="inline" style="align-items: flex-end;">
+                        <div style="width: 80px; margin-right: 6px;">
+                            <label>${this._localize("editor.threshold_low")}</label>
+                            <input id="icon_threshold_low${i}" type="number" step="any">
+                        </div>
+                        <div>
+                            <label>${this._localize("editor.color_low")}</label>
+                            <input id="icon_color_low${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
+                        </div>
+                    </div>
+                    <div class="inline" style="align-items: flex-end;">
+                        <div style="width: 80px; margin-right: 6px;">
+                            <label>${this._localize("editor.threshold_high")}</label>
+                            <input id="icon_threshold_high${i}" type="number" step="any">
+                        </div>
+                        <div>
+                            <label>${this._localize("editor.color_high")}</label>
+                            <input id="icon_color_high${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <label>Cor Icon</label>
-                  <input id="icon_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
+                <div class="row inline" style="align-items: flex-end;">
+                    <div style="flex-grow: 1;">
+                        <label>${this._localize("common.font_weight")}</label>
+                        <ha-select id="font_weight${i}">
+                            <mwc-list-item value="normal">Normal</mwc-list-item>
+                            <mwc-list-item value="bold">Bold</mwc-list-item>
+                        </ha-select>
+                    </div>
+                    <div>
+                        <label>${this._localize("common.color")}</label>
+                        <input id="color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
+                    </div>
+                    <div>
+                        <label>${this._localize("common.background")}</label>
+                        <input id="badge_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <label>${this._localize("common.size")}</label>
+                        <input id="font_size${i}" type="number" min="0" step="1" placeholder="px">
+                    </div>
                 </div>
-                <div style="width: 80px; margin-left: 4px;">
-                  <label>Tamanho</label>
-                  <input id="font_size${i}" placeholder="Ex: 12px">
+                <div class="row">
+                    <button class="pos-btn" id="btn_${i}">${this._localize("common.position")}</button>
                 </div>
-              </div>
-              <div class="row inline">
-                <div>
-                  <label>Left ${i + 1} (%)</label>
-                  <input id="left${i}" type="number" min="0" max="100">
+                <div class="row inline">
+                    <div>
+                      <label>${this._localize("common.left")}</label>
+                      <input id="left${i}" type="number" min="0" max="100">
+                    </div>
+                    <div>
+                      <label>${this._localize("common.top")}</label>
+                      <input id="top${i}" type="number" min="0" max="100">
+                    </div>
                 </div>
-                <div>
-                  <label>Top ${i + 1} (%)</label>
-                  <input id="top${i}" type="number" min="0" max="100">
+                <div class="row" style="text-align: right; margin-top: 8px;">
+                    <button id="remove${i}" style="color: red;">${this._localize("common.remove")}</button>
                 </div>
-              </div>
-              <div class="row" style="text-align: right; margin-top: 8px;">
-                 <button id="remove${i}" style="color: red;">Remover Item</button>
-              </div>
             </div>
           </details>
         `;}).join("")}
         <div class="row">
-          <button id="add_entity">Adicionar Entidade</button>
+          <button id="add_entity">${this._localize("common.add")}</button>
         </div>
-
-        <div class="section-title">Animações (Flows)</div>
+        <div class="section-title">${this._localize("editor.animations")}</div>
         ${this._config.animations.map((anim, i) => `
           <details class="anim-block" id="details_anim_${i}">
             <summary class="item-title" style="background: #e6b800; color: black;">Anim ${i + 1}</summary>
             <div class="anim-content" style="border-color: #e6b800;">
-              <div class="row">
-                <ha-entity-picker id="anim_ent${i}" label="Entidade Gatilho" allow-custom-entity></ha-entity-picker>
-              </div>
-              <div class="row inline">
-                <div style="flex-grow: 1;">
-                  <label>Estado Ativo (ex: on)</label>
-                  <input id="anim_state${i}" placeholder="on">
+                <div class="row">
+                    <ha-entity-picker id="anim_ent${i}" label="${this._localize("common.trigger")}" allow-custom-entity></ha-entity-picker>
                 </div>
-                <div style="width: 80px;">
-                  <label>Limiar (>W)</label>
-                  <input id="anim_threshold${i}" type="number" step="any">
+                <div class="row inline">
+                    <div style="flex-grow: 1;"><label>${this._localize("common.state")}</label><input id="anim_state${i}" placeholder="on"></div>
+                    <div style="flex-grow: 1;"><label>${this._localize("common.threshold")}</label><input id="anim_threshold${i}" type="number" step="any"></div>
                 </div>
-                <div>
-                  <label>Cor Início</label>
-                  <input id="anim_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
-                </div>
-                <div>
-                  <label>Cor Fim</label>
-                  <input id="anim_color_end${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
-                </div>
-                <div style="width: 60px;">
-                  <label>Largura</label>
-                  <input id="anim_width${i}" type="number" min="1">
-                </div>
-                <div style="width: 80px;">
-                  <label>Velocidade (s)</label>
-                  <input id="anim_speed${i}" type="number" min="0.1" step="0.1">
-                </div>
-                <div style="flex-grow: 1;">
-                  <label>Estilo</label>
-                  <ha-select id="anim_style${i}" label="Estilo">
+                <div class="row">
+                    <label>${this._localize("common.style")}</label>
+                    <ha-select id="anim_style${i}">
                       <mwc-list-item value="dashes">Dashes</mwc-list-item>
                       <mwc-list-item value="dots">Dots</mwc-list-item>
                       <mwc-list-item value="shimmer">Shimmer</mwc-list-item>
-                  </ha-select>
+                      <mwc-list-item value="pulse">Pulse</mwc-list-item>
+                      <mwc-list-item value="comet">Comet</mwc-list-item>
+                    </ha-select>
                 </div>
-              </div>
-              <div class="row">
-                <label>Path SVG (d)</label>
+                <div class="row inline">
+                    <div><label>${this._localize("common.color_start")}</label><input id="anim_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                    <div><label>${this._localize("common.color_end")}</label><input id="anim_color_end${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                    <div style="flex-grow: 1;"><label>${this._localize("common.width")}</label><input id="anim_width${i}" type="number" min="1"></div>
+                    <div style="flex-grow: 1;"><label>${this._localize("common.speed")}</label><input id="anim_speed${i}" type="number" min="0.1" step="0.1"></div>
+                </div>
                 <div class="row">
-                   <button class="pos-btn" id="btn_path_${i}" style="background-color: #e6b800; color: black;">Definir Caminho na Imagem</button>
+                   <button class="pos-btn" id="btn_path_${i}" style="background-color: #e6b800; color: black;">${this._localize("common.set_path")}</button>
                 </div>
+                <div class="row">
+                <label>${this._localize("common.path")}</label>
                 <textarea id="anim_path${i}" rows="3" style="width: 100%; font-family: monospace;"></textarea>
-              </div>
-              <div class="row">
-                <label>Dash Array (ex: 10 5)</label>
-                <input id="anim_dash${i}">
-              </div>
-              <div class="row">
-                <label>Tamanho do Brilho (%)</label>
-                <input id="anim_mask_dash${i}" type="number" min="1" max="100">
-              </div>
-              <div class="row" style="text-align: right; margin-top: 8px;">
-                 <button id="remove_anim${i}" style="color: red;">Remover Animação</button>
+                </div>
+                <div class="row inline">
+                    <div style="flex-grow: 1;"><label>${this._localize("common.dash_array")}</label><input id="anim_dash${i}"></div>
+                    <div style="flex-grow: 1;"><label>${this._localize("common.shimmer_size")}</label><input id="anim_mask_dash${i}" type="number" min="1" max="100"></div>
+                </div>
+                <div class="row" style="text-align: right; margin-top: 8px;">
+                 <button id="remove_anim${i}" style="color: red;">${this._localize("common.remove")}</button>
               </div>
             </div>
           </details>
         `).join("")}
         <div class="row">
-          <button id="add_anim">Adicionar Animação</button>
+          <button id="add_anim">${this._localize("common.add")}</button>
         </div>
 
-        <div class="section-title">Tanques de Água</div>
+        <div class="section-title">${this._localize("editor.tanks")}</div>
         ${this._config.water_tanks.map((tank, i) => `
           <details class="tank-block" id="details_tank_${i}">
             <summary class="item-title" style="background: #00bcd4; color: white;">Tanque ${i + 1}</summary>
             <div class="anim-content" style="border-color: #00bcd4;">
               <div class="row">
-                <ha-entity-picker id="tank_ent${i}" label="Entidade Gatilho" allow-custom-entity></ha-entity-picker>
+                <ha-entity-picker id="tank_ent${i}" label="${this._localize("common.trigger")}" allow-custom-entity></ha-entity-picker>
+              </div>
+              <div class="row inline">
+                <div><label>${this._localize("common.state")}</label><input id="tank_state${i}" placeholder="on"></div>
+                <div><label>${this._localize("common.threshold")}</label><input id="tank_threshold${i}" type="number" step="any"></div>
               </div>
               <div class="row inline">
                 <div><label>X</label><input id="tank_x${i}" type="number"></div>
@@ -1176,99 +1725,103 @@ class BombaCalorCardEditor extends HTMLElement {
                 <div><label>H</label><input id="tank_h${i}" type="number"></div>
               </div>
               <div class="row inline">
-                <div><label>Cor Bolhas</label><input id="tank_bubble_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
-                <div><label>Opacidade</label><input id="tank_opacity${i}" type="number" min="0" max="1" step="0.1"></div>
-                <div><label>Estado</label><input id="tank_state${i}" placeholder="on"></div>
-                <div><label>Limiar (>W)</label><input id="tank_threshold${i}" type="number" step="any"></div>
+                <div><label>${this._localize("common.bubbles_color")}</label><input id="tank_bubble_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                <div><label>${this._localize("common.opacity")}</label><input id="tank_opacity${i}" type="number" min="0" max="1" step="0.1"></div>
               </div>
               <div class="row" style="text-align: right; margin-top: 8px;">
-                 <button id="remove_tank${i}" style="color: red;">Remover Tanque</button>
+                 <button id="remove_tank${i}" style="color: red;">${this._localize("common.remove")}</button>
               </div>
             </div>
           </details>
         `).join("")}
-        <div class="row"><button id="add_tank">Adicionar Tanque</button></div>
+        <div class="row"><button id="add_tank">${this._localize("common.add")}</button></div>
 
-        <div class="section-title">Ventiladores</div>
+        <div class="section-title">${this._localize("editor.fans")}</div>
         ${this._config.fans.map((fan, i) => `
           <details class="fan-block" id="details_fan_${i}">
             <summary class="item-title" style="background: #00bcd4; color: white;">Ventilador ${i + 1}</summary>
             <div class="anim-content" style="border-color: #00bcd4;">
               <div class="row">
-                <ha-entity-picker id="fan_ent${i}" label="Entidade Gatilho" allow-custom-entity></ha-entity-picker>
+                <ha-entity-picker id="fan_ent${i}" label="${this._localize("common.trigger")}" allow-custom-entity></ha-entity-picker>
+              </div>
+              <div class="row inline">
+                <div><label>${this._localize("common.state")}</label><input id="fan_state${i}" placeholder="on"></div>
+                <div><label>${this._localize("common.threshold")}</label><input id="fan_threshold${i}" type="number" step="any"></div>
               </div>
               <div class="row">
-                 <button class="pos-btn" id="btn_fan_${i}" style="background-color: #00bcd4; color: white;">Definir Posição</button>
+                 <button class="pos-btn" id="btn_fan_${i}" style="background-color: #00bcd4; color: white;">${this._localize("common.position")}</button>
               </div>
               <div class="row inline">
                 <div><label>X</label><input id="fan_x${i}" type="number"></div>
                 <div><label>Y</label><input id="fan_y${i}" type="number"></div>
-                <div><label>Tamanho</label><input id="fan_size${i}" type="number"></div>
-                <div><label>Inclinação (0-1)</label><input id="fan_tilt${i}" type="number" min="0" max="1" step="0.1"></div>
-                <div><label>Rotação</label><input id="fan_rotate${i}" type="number"></div>
-                <div><label>Skew</label><input id="fan_skew${i}" type="number"></div>
+                <div><label>${this._localize("common.size")}</label><input id="fan_size${i}" type="number"></div>
               </div>
               <div class="row inline">
-                <div><label>Cor</label><input id="fan_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
-                <div><label>Cor Traço</label><input id="fan_stroke_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
-                <div><label>Largura Traço</label><input id="fan_stroke_width${i}" type="number" min="0" step="0.5"></div>
+                <div><label>${this._localize("common.tilt")}</label><input id="fan_tilt${i}" type="number" min="0" max="1" step="0.1"></div>
+                <div><label>${this._localize("common.rotation")}</label><input id="fan_rotate${i}" type="number"></div>
+                <div><label>${this._localize("common.skew")}</label><input id="fan_skew${i}" type="number"></div>
               </div>
               <div class="row inline">
-                <div><label>Opacidade</label><input id="fan_opacity${i}" type="number" min="0" max="1" step="0.1"></div>
-                <div><label>Velocidade (s)</label><input id="fan_speed${i}" type="number" min="0.1" step="0.1"></div>
-                <div><label>Estado</label><input id="fan_state${i}" placeholder="on"></div>
-                <div><label>Limiar (>W)</label><input id="fan_threshold${i}" type="number" step="any"></div>
+                <div><label>${this._localize("common.color")}</label><input id="fan_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                <div><label>${this._localize("common.stroke_color")}</label><input id="fan_stroke_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                <div><label>${this._localize("common.stroke_width")}</label><input id="fan_stroke_width${i}" type="number" min="0" step="0.5"></div>
+              </div>
+              <div class="row inline">
+                <div><label>${this._localize("common.opacity")}</label><input id="fan_opacity${i}" type="number" min="0" max="1" step="0.1"></div>
+                <div><label>${this._localize("common.speed")}</label><input id="fan_speed${i}" type="number" min="0.1" step="0.1"></div>
               </div>
               <div class="row inline" style="align-items: center;">
-                  <label style="width: auto; margin-right: 10px;">Inverter Rotação</label>
+                  <label style="width: auto; margin-right: 10px;">${this._localize("common.reverse")}</label>
                   <input id="fan_reverse${i}" type="checkbox" style="width: auto;">
               </div>
               <div class="row" style="text-align: right; margin-top: 8px;">
-                 <button id="remove_fan${i}" style="color: red;">Remover Ventilador</button>
+                 <button id="remove_fan${i}" style="color: red;">${this._localize("common.remove")}</button>
               </div>
             </div>
           </details>
         `).join("")}
-        <div class="row"><button id="add_fan">Adicionar Ventilador</button></div>
+        <div class="row"><button id="add_fan">${this._localize("common.add")}</button></div>
 
-        <div class="section-title">Bombas</div>
+        <div class="section-title">${this._localize("editor.pumps")}</div>
         ${this._config.pumps.map((pump, i) => `
           <details class="pump-block" id="details_pump_${i}">
             <summary class="item-title" style="background: #00bcd4; color: white;">Bomba ${i + 1}</summary>
             <div class="anim-content" style="border-color: #00bcd4;">
               <div class="row">
-                <ha-entity-picker id="pump_ent${i}" label="Entidade Gatilho" allow-custom-entity></ha-entity-picker>
+                <ha-entity-picker id="pump_ent${i}" label="${this._localize("common.trigger")}" allow-custom-entity></ha-entity-picker>
+              </div>
+              <div class="row inline">
+                <div><label>${this._localize("common.state")}</label><input id="pump_state${i}" placeholder="on"></div>
+                <div><label>${this._localize("common.threshold")}</label><input id="pump_threshold${i}" type="number" step="any"></div>
               </div>
               <div class="row">
-                 <button class="pos-btn" id="btn_pump_${i}" style="background-color: #00bcd4; color: white;">Definir Posição</button>
+                 <button class="pos-btn" id="btn_pump_${i}" style="background-color: #00bcd4; color: white;">${this._localize("common.position")}</button>
               </div>
               <div class="row inline">
                 <div><label>X</label><input id="pump_x${i}" type="number"></div>
                 <div><label>Y</label><input id="pump_y${i}" type="number"></div>
-                <div><label>Tamanho</label><input id="pump_size${i}" type="number"></div>
+                <div><label>${this._localize("common.size")}</label><input id="pump_size${i}" type="number"></div>
               </div>
               <div class="row">
-                <label>Imagem URL (Opcional)</label>
+                <label>${this._localize("common.image_url")}</label>
                 <input id="pump_image${i}" placeholder="/local/fan.png">
               </div>
               <div class="row inline">
-                <div><label>Cor</label><input id="pump_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
-                <div><label>Opacidade</label><input id="pump_opacity${i}" type="number" min="0" max="1" step="0.1"></div>
-                <div><label>Velocidade (s)</label><input id="pump_speed${i}" type="number" min="0.1" step="0.1"></div>
-                <div><label>Estado</label><input id="pump_state${i}" placeholder="on"></div>
-                <div><label>Limiar (>W)</label><input id="pump_threshold${i}" type="number" step="any"></div>
+                <div><label>${this._localize("common.color")}</label><input id="pump_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                <div><label>${this._localize("common.opacity")}</label><input id="pump_opacity${i}" type="number" min="0" max="1" step="0.1"></div>
+                <div><label>${this._localize("common.speed")}</label><input id="pump_speed${i}" type="number" min="0.1" step="0.1"></div>
               </div>
               <div class="row inline" style="align-items: center;">
-                  <label style="width: auto; margin-right: 10px;">Inverter Rotação</label>
+                  <label style="width: auto; margin-right: 10px;">${this._localize("common.reverse")}</label>
                   <input id="pump_reverse${i}" type="checkbox" style="width: auto;">
               </div>
               <div class="row" style="text-align: right; margin-top: 8px;">
-                 <button id="remove_pump${i}" style="color: red;">Remover Bomba</button>
+                 <button id="remove_pump${i}" style="color: red;">${this._localize("common.remove")}</button>
               </div>
             </div>
           </details>
         `).join("")}
-        <div class="row"><button id="add_pump">Adicionar Bomba</button></div>
+        <div class="row"><button id="add_pump">${this._localize("common.add")}</button></div>
 
       </div>
     `;
@@ -1307,6 +1860,10 @@ class BombaCalorCardEditor extends HTMLElement {
     });
     root.getElementById("show_grid").addEventListener("change", (e) => {
       this._config = { ...this._config, show_grid: e.target.checked };
+      this._updateConfig();
+    });
+    root.getElementById("low_performance").addEventListener("change", (e) => {
+      this._config = { ...this._config, low_performance: e.target.checked };
       this._updateConfig();
     });
 
@@ -1549,6 +2106,8 @@ class BombaCalorCardEditor extends HTMLElement {
 
     // Switch
     root.getElementById("switch").addEventListener("value-changed", (e) => {
+      if (this._isUpdatingValues) return;
+      if (this._config.switch === e.detail.value) return;
       this._config = { ...this._config, switch: e.detail.value };
       this._updateConfig();
     });
@@ -1561,16 +2120,41 @@ class BombaCalorCardEditor extends HTMLElement {
       this._config.switch_position = { ...this._config.switch_position, top: Number(e.target.value) };
       this._updateConfig();
     });
-
-    // Flow
-    root.getElementById("btn_flow").addEventListener("click", () => this._openModal("flow"));
-    root.getElementById("flow_left").addEventListener("change", (e) => {
-      this._config.flow_position = { ...this._config.flow_position, left: Number(e.target.value) };
-      this._updateConfig();
+    
+    // Language
+    root.getElementById("language").addEventListener("change", (e) => {
+        if (this._isUpdatingValues || !e.target.value) return;
+        if (this._config.language === e.target.value) return;
+        this._config = { ...this._config, language: e.target.value };
+        this._updateConfig();
+        
+        // Força re-render invalidando a versão atual para atualizar os textos traduzidos
+        const container = this.shadowRoot.querySelector(".card-config");
+        if (container) container.setAttribute("data-version", "0");
+        
+        this.render(); 
     });
-    root.getElementById("flow_top").addEventListener("change", (e) => {
-      this._config.flow_position = { ...this._config.flow_position, top: Number(e.target.value) };
-      this._updateConfig();
+    root.getElementById("language").addEventListener("closed", (e) => e.stopPropagation());
+
+    // Backup / Restore
+    root.getElementById("btn_export").addEventListener("click", () => {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this._config));
+        const downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", "bomba_calor_config.json");
+        document.body.appendChild(downloadAnchorNode);
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+    });
+
+    root.getElementById("btn_import").addEventListener("click", () => {
+        root.getElementById("import_file").click();
+    });
+
+    root.getElementById("import_file").addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        this._handleImportFile(file);
     });
 
     // Entidades
@@ -1605,21 +2189,61 @@ class BombaCalorCardEditor extends HTMLElement {
           this._updateConfig();
         });
 
-      root.getElementById(`font_size${i}`).addEventListener("change", (e) => {
+      root.getElementById(`font_size${i}`).addEventListener("input", (e) => {
           const font_sizes = [...(this._config.font_sizes || [])];
-          font_sizes[i] = e.target.value;
+          font_sizes[i] = e.target.value ? e.target.value + "px" : "";
           this._config = { ...this._config, font_sizes };
           this._updateConfig();
         });
 
+      root.getElementById(`font_weight${i}`).addEventListener("change", (e) => {
+          if (this._isUpdatingValues || !e.target.value) return;
+          const font_weights = [...(this._config.font_weights || [])];
+          font_weights[i] = e.target.value;
+          this._config = { ...this._config, font_weights };
+          this._updateConfig();
+        });
+      root.getElementById(`font_weight${i}`).addEventListener("closed", (e) => {
+        e.stopPropagation();
+      });
+
       root.getElementById(`icon${i}`).addEventListener("value-changed", (e) => {
+          if (this._isUpdatingValues) return;
+          if (this._config.icons[i] === e.detail.value) return;
           const icons = [...(this._config.icons || [])];
           icons[i] = e.detail.value;
           this._config = { ...this._config, icons };
           this._updateConfig();
         });
 
+      root.getElementById(`icon_threshold_low${i}`).addEventListener("change", (e) => {
+          const icon_thresholds_low = [...(this._config.icon_thresholds_low || [])];
+          icon_thresholds_low[i] = e.target.value;
+          this._config = { ...this._config, icon_thresholds_low };
+          this._updateConfig();
+      });
+      root.getElementById(`icon_threshold_high${i}`).addEventListener("change", (e) => {
+          const icon_thresholds_high = [...(this._config.icon_thresholds_high || [])];
+          icon_thresholds_high[i] = e.target.value;
+          this._config = { ...this._config, icon_thresholds_high };
+          this._updateConfig();
+      });
+      root.getElementById(`icon_color_low${i}`).addEventListener("change", (e) => {
+          const icon_colors_low = [...(this._config.icon_colors_low || [])];
+          icon_colors_low[i] = e.target.value;
+          this._config = { ...this._config, icon_colors_low };
+          this._updateConfig();
+      });
+      root.getElementById(`icon_color_high${i}`).addEventListener("change", (e) => {
+          const icon_colors_high = [...(this._config.icon_colors_high || [])];
+          icon_colors_high[i] = e.target.value;
+          this._config = { ...this._config, icon_colors_high };
+          this._updateConfig();
+      });
+
       root.getElementById(`ent${i}`).addEventListener("value-changed", (e) => {
+          if (this._isUpdatingValues) return;
+          if (this._config.entities[i] === e.detail.value) return;
           const entities = [...(this._config.entities || [])];
           entities[i] = e.detail.value;
           this._config = { ...this._config, entities };
@@ -1667,6 +2291,11 @@ class BombaCalorCardEditor extends HTMLElement {
           const icons = [...(this._config.icons || [])];
           const icon_colors = [...(this._config.icon_colors || [])];
           const font_sizes = [...(this._config.font_sizes || [])];
+          const font_weights = [...(this._config.font_weights || [])];
+          const icon_thresholds_low = [...(this._config.icon_thresholds_low || [])];
+          const icon_thresholds_high = [...(this._config.icon_thresholds_high || [])];
+          const icon_colors_low = [...(this._config.icon_colors_low || [])];
+          const icon_colors_high = [...(this._config.icon_colors_high || [])];
           const visible = [...(this._config.visible || [])];
           const show_labels = [...(this._config.show_labels || [])];
 
@@ -1677,11 +2306,16 @@ class BombaCalorCardEditor extends HTMLElement {
           badge_colors.splice(i, 1);
           icons.splice(i, 1);
           font_sizes.splice(i, 1);
+          font_weights.splice(i, 1);
+          icon_thresholds_low.splice(i, 1);
+          icon_thresholds_high.splice(i, 1);
+          icon_colors_low.splice(i, 1);
+          icon_colors_high.splice(i, 1);
           icon_colors.splice(i, 1);
           visible.splice(i, 1);
           show_labels.splice(i, 1);
           
-          this._config = { ...this._config, entities, names, positions, colors, badge_colors, icons, icon_colors, font_sizes, visible, show_labels };
+          this._config = { ...this._config, entities, names, positions, colors, badge_colors, icons, icon_colors, font_sizes, font_weights, icon_thresholds_low, icon_thresholds_high, icon_colors_low, icon_colors_high, visible, show_labels };
           this._updateConfig();
         });
     }
@@ -1689,6 +2323,8 @@ class BombaCalorCardEditor extends HTMLElement {
     // Animações Listeners
     for (let i = 0; i < this._config.animations.length; i++) {
       root.getElementById(`anim_ent${i}`).addEventListener("value-changed", (e) => {
+        if (this._isUpdatingValues) return;
+        if (this._config.animations[i]?.entity === e.detail.value) return;
         const animations = [...this._config.animations];
         animations[i] = { ...animations[i], entity: e.detail.value };
         this._config = { ...this._config, animations };
@@ -1730,8 +2366,9 @@ class BombaCalorCardEditor extends HTMLElement {
         this._config = { ...this._config, animations };
         this._updateConfig();
       });
-      root.getElementById(`anim_style${i}`).addEventListener("selected", (e) => {
-        if (!e.target.value) return;
+      root.getElementById(`anim_style${i}`).addEventListener("change", (e) => {
+        if (this._isUpdatingValues || !e.target.value) return;
+        if (this._config.animations[i]?.style === e.target.value) return;
         const animations = [...this._config.animations];
         animations[i] = { ...animations[i], style: e.target.value };
         this._config = { ...this._config, animations };
@@ -1801,6 +2438,8 @@ class BombaCalorCardEditor extends HTMLElement {
             this._updateConfig();
         });
         root.getElementById(`tank_ent${i}`).addEventListener("value-changed", (e) => {
+            if (this._isUpdatingValues) return;
+            if (this._config.water_tanks[i]?.entity === e.detail.value) return;
             const tanks = [...this._config.water_tanks];
             tanks[i] = { ...tanks[i], entity: e.detail.value };
             this._config = { ...this._config, water_tanks: tanks };
@@ -1859,6 +2498,8 @@ class BombaCalorCardEditor extends HTMLElement {
             this._updateConfig();
         });
         root.getElementById(`fan_ent${i}`).addEventListener("value-changed", (e) => {
+            if (this._isUpdatingValues) return;
+            if (this._config.fans[i]?.entity === e.detail.value) return;
             const fans = [...this._config.fans];
             fans[i] = { ...fans[i], entity: e.detail.value };
             this._config = { ...this._config, fans };
@@ -1959,6 +2600,8 @@ class BombaCalorCardEditor extends HTMLElement {
             this._updateConfig();
         });
         root.getElementById(`pump_ent${i}`).addEventListener("value-changed", (e) => {
+            if (this._isUpdatingValues) return;
+            if (this._config.pumps[i]?.entity === e.detail.value) return;
             const pumps = [...this._config.pumps];
             pumps[i] = { ...pumps[i], entity: e.detail.value };
             this._config = { ...this._config, pumps };
@@ -2023,6 +2666,11 @@ class BombaCalorCardEditor extends HTMLElement {
       newConfig.icons = [...newConfig.icons, ""];
       newConfig.icon_colors = [...newConfig.icon_colors, "#ffffff"];
       newConfig.font_sizes = [...newConfig.font_sizes, ""];
+      newConfig.font_weights = [...newConfig.font_weights, "normal"];
+      newConfig.icon_thresholds_low = [...newConfig.icon_thresholds_low, ""];
+      newConfig.icon_thresholds_high = [...newConfig.icon_thresholds_high, ""];
+      newConfig.icon_colors_low = [...newConfig.icon_colors_low, ""];
+      newConfig.icon_colors_high = [...newConfig.icon_colors_high, ""];
       newConfig.visible = [...newConfig.visible, true];
       newConfig.show_labels = [...newConfig.show_labels, true];
       newConfig.positions = [...newConfig.positions, { left: 5, top: 90 }];
@@ -2043,6 +2691,24 @@ class BombaCalorCardEditor extends HTMLElement {
       block.addEventListener("drop", this._handleDrop.bind(this));
       block.addEventListener("dragend", this._handleDragEnd.bind(this));
     });
+  }
+
+  _handleImportFile(file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const importedConfig = JSON.parse(event.target.result);
+          if (typeof importedConfig === 'object') {
+             this._initializeConfig(importedConfig);
+             this._updateConfig();
+             alert(this._localize("editor.import_success"));
+             this.render(); // Força re-render do editor com novos valores
+          }
+        } catch (err) {
+          alert(this._localize("editor.import_error"));
+        }
+      };
+      reader.readAsText(file);
   }
 
   _setupAccordionExclusivity() {
@@ -2459,6 +3125,8 @@ class BombaCalorCardEditor extends HTMLElement {
   }
 
   _updateValues() {
+    this._isUpdatingValues = true;
+
     const root = this.shadowRoot;
     const cfg = this._config;
 
@@ -2471,6 +3139,7 @@ class BombaCalorCardEditor extends HTMLElement {
     setVal("badge_opacity", cfg.badge_opacity);
     setVal("view_box", cfg.view_box);
     setCheck("show_grid", cfg.show_grid);
+    setCheck("low_performance", cfg.low_performance);
     
     const swPicker = root.getElementById("switch");
     if (swPicker) {
@@ -2480,8 +3149,11 @@ class BombaCalorCardEditor extends HTMLElement {
     
     setVal("switch_left", cfg.switch_position.left);
     setVal("switch_top", cfg.switch_position.top);
-    setVal("flow_left", cfg.flow_position.left);
-    setVal("flow_top", cfg.flow_position.top);
+
+    const langPicker = root.getElementById("language");
+    if (langPicker) {
+        langPicker.value = cfg.language || "auto";
+    }
 
     for (let i = 0; i < cfg.entities.length; i++) {
       setCheck(`vis${i}`, cfg.visible[i] !== false);
@@ -2497,7 +3169,17 @@ class BombaCalorCardEditor extends HTMLElement {
       setVal(`color${i}`, cfg.colors[i] || "#ffffff");
       setVal(`badge_color${i}`, cfg.badge_colors[i] || "#000000");
       setVal(`icon_color${i}`, cfg.icon_colors[i] || "#ffffff");
-      setVal(`font_size${i}`, cfg.font_sizes[i] || "");
+      setVal(`font_size${i}`, parseFloat(cfg.font_sizes[i]) || "");
+      
+      setVal(`icon_threshold_low${i}`, cfg.icon_thresholds_low[i] || "");
+      setVal(`icon_threshold_high${i}`, cfg.icon_thresholds_high[i] || "");
+      setVal(`icon_color_low${i}`, cfg.icon_colors_low[i] || "#448aff");
+      setVal(`icon_color_high${i}`, cfg.icon_colors_high[i] || "#ff5252");
+
+      const fontWeightPicker = root.getElementById(`font_weight${i}`);
+      if (fontWeightPicker) {
+        fontWeightPicker.value = cfg.font_weights[i] || 'normal';
+      }
       
       const iconPicker = root.getElementById(`icon${i}`);
       if (iconPicker) {
@@ -2595,6 +3277,8 @@ class BombaCalorCardEditor extends HTMLElement {
         setVal(`pump_threshold${i}`, pump.threshold || "");
         setCheck(`pump_reverse${i}`, pump.reverse === true);
     });
+
+    this._isUpdatingValues = false;
   }
 
   _handleDragStart(e) {
@@ -2637,6 +3321,11 @@ class BombaCalorCardEditor extends HTMLElement {
       icons: move(this._config.icons, fromIndex, toIndex),
       icon_colors: move(this._config.icon_colors, fromIndex, toIndex),
       font_sizes: move(this._config.font_sizes, fromIndex, toIndex),
+      font_weights: move(this._config.font_weights, fromIndex, toIndex),
+      icon_thresholds_low: move(this._config.icon_thresholds_low, fromIndex, toIndex),
+      icon_thresholds_high: move(this._config.icon_thresholds_high, fromIndex, toIndex),
+      icon_colors_low: move(this._config.icon_colors_low, fromIndex, toIndex),
+      icon_colors_high: move(this._config.icon_colors_high, fromIndex, toIndex),
       visible: move(this._config.visible, fromIndex, toIndex),
       show_labels: move(this._config.show_labels, fromIndex, toIndex),
       positions: move(this._config.positions, fromIndex, toIndex),
