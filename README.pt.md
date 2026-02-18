@@ -85,7 +85,8 @@ Crie representações visuais do fluido a passar nos tubos:
     *   Animação de rotor giratório.
     *   Suporte para **Imagens Personalizadas** (carregue a sua própria imagem de bomba que irá rodar).
 *   **Tanques de Água:**
-    *   Visualização de reservatórios com efeito de bolhas ascendentes animadas.
+    *   Visualização de reservatórios com efeito de bolhas, ondas, ondulação ou **Fogo**.
+    *   **Efeito de Fogo:** Utilize um GIF animado (suporta transparência) que muda de cor dinamicamente com base na temperatura.
     *   Cores e opacidade configuráveis.
 
 ## Licença

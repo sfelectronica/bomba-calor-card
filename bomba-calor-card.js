@@ -5,7 +5,7 @@
  * Repo: https://github.com/sfelectronica/bomba-calor-card
  */
 
-console.info("%c BOMBA-CALOR-CARD %c 1.1.5 ", "color: white; background: #2681DC; font-weight: bold;", "color: #2681DC; background: white; font-weight: bold;");
+console.info("%c BOMBA-CALOR-CARD %c 1.1.6 ", "color: white; background: #2681DC; font-weight: bold;", "color: #2681DC; background: white; font-weight: bold;");
 
 const translations = {
   pt: {
@@ -40,9 +40,17 @@ const translations = {
     "common.set_path": "Definir Caminho na Imagem",
     "common.dash_array": "Dash Array (ex: 10 5)",
     "common.shimmer_size": "Tamanho do Brilho (%)",
-    "common.bubbles_color": "Cor Bolhas",
+    "common.bubbles_color": "Cor do Efeito",
     "common.tilt": "Inclinação (0-1)",
     "common.rotation": "Rotação",
+    "common.temp_entity": "Entidade de Temperatura",
+    "common.min_temp": "Temp. Mínima",
+    "common.max_temp": "Temp. Máxima",
+    "common.min_color": "Cor Mínima",
+    "common.max_color": "Cor Máxima",
+    "common.smoke_entity": "Entidade para Fumo",
+    "common.smoke_temp_threshold": "Temp. para Fumo",
+    "common.smoke_color": "Cor do Fumo",
     "common.skew": "Skew",
     "common.stroke_color": "Cor Traço",
     "common.stroke_width": "Largura Traço",
@@ -70,6 +78,12 @@ const translations = {
     "editor.threshold_high": "Valor > X",
     "editor.color_low": "Cor < X",
     "editor.color_high": "Cor > X",
+    "editor.tank_style_bubbles": "Bolhas",
+    "editor.tank_style_waves": "Ondas",
+    "editor.tank_style_ripple": "Ondulação",
+    "editor.tank_style_fire": "Fogo / Aquecimento",
+    "editor.fire_effect_options": "Opções (Efeito Fogo)",
+    "editor.fire_image": "URL do GIF de Fogo",
   },
   en: {
     "common.image": "Image",
@@ -103,9 +117,17 @@ const translations = {
     "common.set_path": "Set Path on Image",
     "common.dash_array": "Dash Array (ex: 10 5)",
     "common.shimmer_size": "Shimmer Size (%)",
-    "common.bubbles_color": "Bubbles Color",
+    "common.bubbles_color": "Effect Color",
     "common.tilt": "Tilt (0-1)",
     "common.rotation": "Rotation",
+    "common.temp_entity": "Temperature Entity",
+    "common.min_temp": "Min Temp",
+    "common.max_temp": "Max Temp",
+    "common.min_color": "Min Color",
+    "common.max_color": "Max Color",
+    "common.smoke_entity": "Smoke Entity",
+    "common.smoke_temp_threshold": "Smoke Temp Threshold",
+    "common.smoke_color": "Smoke Color",
     "common.skew": "Skew",
     "common.stroke_color": "Stroke Color",
     "common.stroke_width": "Stroke Width",
@@ -133,6 +155,12 @@ const translations = {
     "editor.threshold_high": "Value > X",
     "editor.color_low": "Color < X",
     "editor.color_high": "Color > X",
+    "editor.tank_style_bubbles": "Bubbles",
+    "editor.tank_style_waves": "Waves",
+    "editor.tank_style_ripple": "Ripple",
+    "editor.tank_style_fire": "Fire / Heating",
+    "editor.fire_effect_options": "Options (Fire Effect)",
+    "editor.fire_image": "Fire GIF URL",
   },
   es: {
     "common.image": "Imagen",
@@ -166,9 +194,17 @@ const translations = {
     "common.set_path": "Definir Trayecto en Imagen",
     "common.dash_array": "Array de Guiones (ex: 10 5)",
     "common.shimmer_size": "Tamaño del Brillo (%)",
-    "common.bubbles_color": "Color Burbujas",
+    "common.bubbles_color": "Color Efecto",
     "common.tilt": "Inclinación (0-1)",
     "common.rotation": "Rotación",
+    "common.temp_entity": "Entidad de Temperatura",
+    "common.min_temp": "Temp. Mínima",
+    "common.max_temp": "Temp. Máxima",
+    "common.min_color": "Color Mínimo",
+    "common.max_color": "Color Máximo",
+    "common.smoke_entity": "Entidad de Humo",
+    "common.smoke_temp_threshold": "Umbral Temp. Humo",
+    "common.smoke_color": "Color del Humo",
     "common.skew": "Sesgar (Skew)",
     "common.stroke_color": "Color Trazo",
     "common.stroke_width": "Ancho Trazo",
@@ -196,6 +232,12 @@ const translations = {
     "editor.threshold_high": "Valor > X",
     "editor.color_low": "Color < X",
     "editor.color_high": "Color > X",
+    "editor.tank_style_bubbles": "Burbujas",
+    "editor.tank_style_waves": "Olas",
+    "editor.tank_style_ripple": "Ondulación",
+    "editor.tank_style_fire": "Fuego / Calefacción",
+    "editor.fire_effect_options": "Opciones (Efecto Fuego)",
+    "editor.fire_image": "URL del GIF de Fuego",
   },
   fr: {
     "common.image": "Image",
@@ -229,9 +271,17 @@ const translations = {
     "common.set_path": "Définir Chemin sur Image",
     "common.dash_array": "Tableau de Tirets (ex: 10 5)",
     "common.shimmer_size": "Taille du Scintillement (%)",
-    "common.bubbles_color": "Couleur Bulles",
+    "common.bubbles_color": "Couleur Effet",
     "common.tilt": "Inclinaison (0-1)",
     "common.rotation": "Rotation",
+    "common.temp_entity": "Entité de Température",
+    "common.min_temp": "Temp. Min",
+    "common.max_temp": "Temp. Max",
+    "common.min_color": "Couleur Min",
+    "common.max_color": "Couleur Max",
+    "common.smoke_entity": "Entité Fumée",
+    "common.smoke_temp_threshold": "Seuil Temp. Fumée",
+    "common.smoke_color": "Couleur Fumée",
     "common.skew": "Biais (Skew)",
     "common.stroke_color": "Couleur Trait",
     "common.stroke_width": "Largeur Trait",
@@ -259,6 +309,12 @@ const translations = {
     "editor.threshold_high": "Valeur > X",
     "editor.color_low": "Couleur < X",
     "editor.color_high": "Couleur > X",
+    "editor.tank_style_bubbles": "Bulles",
+    "editor.tank_style_waves": "Vagues",
+    "editor.tank_style_ripple": "Ondulation",
+    "editor.tank_style_fire": "Feu / Chauffage",
+    "editor.fire_effect_options": "Options (Effet Feu)",
+    "editor.fire_image": "URL GIF Feu",
   },
   de: {
     "common.image": "Bild",
@@ -292,9 +348,17 @@ const translations = {
     "common.set_path": "Pfad auf Bild Setzen",
     "common.dash_array": "Strichliste (z.B. 10 5)",
     "common.shimmer_size": "Schimmergröße (%)",
-    "common.bubbles_color": "Blasenfarbe",
+    "common.bubbles_color": "Effektfarbe",
     "common.tilt": "Neigung (0-1)",
     "common.rotation": "Rotation",
+    "common.temp_entity": "Temperatur-Entität",
+    "common.min_temp": "Min. Temp",
+    "common.max_temp": "Max. Temp",
+    "common.min_color": "Min. Farbe",
+    "common.max_color": "Max. Farbe",
+    "common.smoke_entity": "Rauch-Entität",
+    "common.smoke_temp_threshold": "Rauch-Temp-Schwelle",
+    "common.smoke_color": "Rauchfarbe",
     "common.skew": "Neigen (Skew)",
     "common.stroke_color": "Strichfarbe",
     "common.stroke_width": "Strichstärke",
@@ -322,6 +386,12 @@ const translations = {
     "editor.threshold_high": "Wert > X",
     "editor.color_low": "Farbe < X",
     "editor.color_high": "Farbe > X",
+    "editor.tank_style_bubbles": "Blasen",
+    "editor.tank_style_waves": "Wellen",
+    "editor.tank_style_ripple": "Welligkeit",
+    "editor.tank_style_fire": "Feuer / Heizung",
+    "editor.fire_effect_options": "Optionen (Feuer-Effekt)",
+    "editor.fire_image": "Feuer GIF URL",
   }
 };
 
@@ -532,6 +602,33 @@ class BombaCalorCard extends HTMLElement {
           0% { transform: translateY(0); opacity: 0; }
           50% { opacity: 1; }
           100% { transform: translateY(-20px); opacity: 0; }
+        }
+        .wave-active {
+          animation: wave-move 2s linear infinite;
+        }
+        @keyframes wave-move {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-20px); }
+        }
+        .ripple-active {
+          animation: ripple-anim 2s linear infinite;
+          transform-box: fill-box;
+          transform-origin: center;
+          opacity: 0;
+        }
+        @keyframes ripple-anim {
+          0% { transform: scale(0.1); opacity: 1; }
+          100% { transform: scale(1); opacity: 0; }
+        }
+        .smoke-particle {
+          animation: smoke-rise 4s infinite ease-out;
+          opacity: 0;
+          transform-origin: bottom center;
+        }
+        @keyframes smoke-rise {
+          0% { transform: translateY(0) scale(0.5); opacity: 0; }
+          20% { opacity: 0.4; }
+          100% { transform: translateY(-30px) scale(2); opacity: 0; }
         }
       </style>
       <ha-card>
@@ -838,27 +935,102 @@ class BombaCalorCard extends HTMLElement {
         const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
         rect.setAttribute("width", tank.width);
         rect.setAttribute("height", tank.height);
-        rect.setAttribute("fill", "none"); // Apenas bolhas visíveis
+        rect.setAttribute("fill", "none");
         rect.setAttribute("stroke", "none");
         rect.setAttribute("rx", "2");
         group.appendChild(rect);
 
-        // Bolhas
-        const bubbleGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        for (let b = 0; b < 5; b++) {
-            const bubble = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            bubble.setAttribute("cx", Math.random() * tank.width);
-            bubble.setAttribute("cy", tank.height - 2);
-            bubble.setAttribute("r", Math.random() * 1.5 + 0.5);
-            bubble.setAttribute("fill", tank.bubble_color || "rgba(255,255,255,0.7)");
-            bubble.classList.add("bubble");
-            bubble.style.animationDelay = `${Math.random() * 2}s`;
-            bubble.style.animationDuration = `${1.5 + Math.random()}s`;
-            bubbleGroup.appendChild(bubble);
+        const animGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        const style = tank.style || 'bubbles';
+        const color = tank.bubble_color || "rgba(255,255,255,0.7)";
+        
+        let tankElData = { config: tank, group: animGroup };
+
+        if (style === 'waves') {
+             const clipId = `tank-clip-${i}-${Date.now()}`;
+             const clip = document.createElementNS("http://www.w3.org/2000/svg", "clipPath");
+             clip.setAttribute("id", clipId);
+             const clipRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+             clipRect.setAttribute("width", tank.width);
+             clipRect.setAttribute("height", tank.height);
+             clipRect.setAttribute("rx", "2");
+             clip.appendChild(clipRect);
+             defs.appendChild(clip);
+             animGroup.setAttribute("clip-path", `url(#${clipId})`);
+
+             const waveP = document.createElementNS("http://www.w3.org/2000/svg", "path");
+             let waveD = `M0,${tank.height*0.3}`;
+             const segments = Math.ceil(tank.width / 20) + 2;
+             for(let w=0; w<segments; w++) {
+                 waveD += ` q10,5 20,0`;
+             }
+             waveD += ` V${tank.height} H0 Z`;
+             
+             waveP.setAttribute("d", waveD);
+             waveP.setAttribute("fill", color);
+             waveP.classList.add("wave-active");
+             animGroup.appendChild(waveP);
+        } else if (style === 'ripple') {
+             const cx = tank.width / 2;
+             const cy = tank.height / 2;
+             const maxR = Math.max(tank.width, tank.height) / 2;
+             for(let r=0; r<3; r++) {
+                 const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                 circle.setAttribute("cx", cx);
+                 circle.setAttribute("cy", cy);
+                 circle.setAttribute("r", maxR);
+                 circle.setAttribute("fill", "none");
+                 circle.setAttribute("stroke", color);
+                 circle.setAttribute("stroke-width", "2");
+                 circle.classList.add("ripple-active");
+                 circle.style.animationDelay = `${r * 0.6}s`;
+                 animGroup.appendChild(circle);
+             }
+        } else if (style === 'fire') {
+             // Imagem GIF
+             const imgUrl = tank.fire_image || "/local/fire.gif";
+             const img = document.createElementNS("http://www.w3.org/2000/svg", "image");
+             img.setAttribute("href", imgUrl);
+             img.setAttribute("x", "0");
+             img.setAttribute("y", "0");
+             img.setAttribute("width", tank.width);
+             img.setAttribute("height", tank.height);
+             img.setAttribute("preserveAspectRatio", "none");
+             animGroup.appendChild(img);
+             
+             // Máscara de Cor (Overlay)
+             const overlay = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+             overlay.setAttribute("width", tank.width);
+             overlay.setAttribute("height", tank.height);
+             overlay.setAttribute("fill", "transparent");
+             overlay.style.mixBlendMode = "color"; // Permite colorir o GIF
+             overlay.style.pointerEvents = "none";
+             
+             // Aplica o próprio GIF como máscara para suportar transparência
+             overlay.style.maskImage = `url(${imgUrl})`;
+             overlay.style.webkitMaskImage = `url(${imgUrl})`;
+             overlay.style.maskSize = "100% 100%";
+             overlay.style.webkitMaskSize = "100% 100%";
+             animGroup.appendChild(overlay);
+             
+             tankElData.fireOverlay = overlay;
+        } else {
+            // Bubbles (Default)
+            for (let b = 0; b < 5; b++) {
+                const bubble = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                bubble.setAttribute("cx", Math.random() * tank.width);
+                bubble.setAttribute("cy", tank.height - 2);
+                bubble.setAttribute("r", Math.random() * 1.5 + 0.5);
+                bubble.setAttribute("fill", color);
+                bubble.classList.add("bubble");
+                bubble.style.animationDelay = `${Math.random() * 2}s`;
+                bubble.style.animationDuration = `${1.5 + Math.random()}s`;
+                animGroup.appendChild(bubble);
+            }
         }
-        group.appendChild(bubbleGroup);
+        group.appendChild(animGroup);
         svgLayer.appendChild(group);
-        this.tankEls.push({ config: tank, group: bubbleGroup });
+        this.tankEls.push(tankElData);
     });
 
     // Renderizar Ventiladores
@@ -1023,6 +1195,54 @@ class BombaCalorCard extends HTMLElement {
     this.updateStates();
   }
 
+  _hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+  }
+
+  _interpolateColor(color1, color2, factor) {
+    factor = Math.max(0, Math.min(1, factor));
+    const c1 = this._hexToRgb(color1);
+    const c2 = this._hexToRgb(color2);
+    if (!c1 || !c2) return color1;
+
+    const r = Math.round(c1.r + factor * (c2.r - c1.r));
+    const g = Math.round(c1.g + factor * (c2.g - c1.g));
+    const b = Math.round(c1.b + factor * (c2.b - c1.b));
+    return `rgb(${r},${g},${b})`;
+  }
+
+  _tintColor(color, factor) {
+    let r, g, b;
+    if (color.startsWith('#')) {
+        const rgb = this._hexToRgb(color);
+        if (!rgb) return color;
+        r = rgb.r; g = rgb.g; b = rgb.b;
+    } else if (color.startsWith('rgb')) {
+        const match = color.match(/\d+/g);
+        if (match) {
+            [r, g, b] = match.map(Number);
+        } else {
+            return color;
+        }
+    } else return color;
+    
+    r = Math.round(r + (255 - r) * factor);
+    g = Math.round(g + (255 - g) * factor);
+    b = Math.round(b + (255 - b) * factor);
+
+    // Clamp values to the 0-255 range
+    r = Math.max(0, Math.min(255, r));
+    g = Math.max(0, Math.min(255, g));
+    b = Math.max(0, Math.min(255, b));
+
+    return `rgb(${r},${g},${b})`;
+  }
+
   _isActive(config, stateObj) {
     if (!stateObj) return false;
     if (config.threshold !== undefined && config.threshold !== null && config.threshold !== "") {
@@ -1182,10 +1402,36 @@ class BombaCalorCard extends HTMLElement {
     });
 
     // Atualizar Tanques
-    this.tankEls.forEach(({ config, group }) => {
+    this.tankEls.forEach((tankData) => {
+        const { config, group, fireOverlay } = tankData;
         const stateObj = this._hass.states[config.entity];
         const isActive = this._isActive(config, stateObj);
-        group.style.display = isActive ? "block" : "none";
+
+        if (tankData._lastActive === isActive && !isActive) {
+            return;
+        }
+
+        if (group.style.display !== (isActive ? "block" : "none")) {
+            group.style.display = isActive ? "block" : "none";
+        }
+
+        if (isActive && config.style === 'fire' && fireOverlay) {
+            const tempState = this._hass.states[config.temp_entity];
+            if (tempState) {
+                const currentTemp = parseFloat(tempState.state);
+                const minTemp = parseFloat(config.min_temp);
+                const maxTemp = parseFloat(config.max_temp);
+                const minColor = config.min_color || '#0000ff';
+                const maxColor = config.max_color || '#ff0000';
+
+                if (!isNaN(currentTemp) && !isNaN(minTemp) && !isNaN(maxTemp) && maxTemp > minTemp) {
+                    const factor = (currentTemp - minTemp) / (maxTemp - minTemp);
+                    const baseColor = this._interpolateColor(minColor, maxColor, factor);
+                    fireOverlay.setAttribute('fill', baseColor);
+                }
+            }
+        }
+        tankData._lastActive = isActive;
     });
 
     // Atualizar Ventiladores
@@ -1728,6 +1974,36 @@ class BombaCalorCardEditor extends HTMLElement {
                 <div><label>${this._localize("common.bubbles_color")}</label><input id="tank_bubble_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
                 <div><label>${this._localize("common.opacity")}</label><input id="tank_opacity${i}" type="number" min="0" max="1" step="0.1"></div>
               </div>
+              <div class="row">
+                <label>${this._localize("common.style")}</label>
+                <ha-select id="tank_style${i}">
+                    <mwc-list-item value="bubbles">${this._localize("editor.tank_style_bubbles")}</mwc-list-item>
+                    <mwc-list-item value="waves">${this._localize("editor.tank_style_waves")}</mwc-list-item>
+                    <mwc-list-item value="ripple">${this._localize("editor.tank_style_ripple")}</mwc-list-item>
+                    <mwc-list-item value="fire">${this._localize("editor.tank_style_fire")}</mwc-list-item>
+                </ha-select>
+              </div>
+
+              <div id="fire_options_${i}">
+                <hr style="border: none; border-top: 1px solid #ccc; margin: 12px 0;">
+                <div style="font-weight: bold; margin-bottom: 8px;">${this._localize("editor.fire_effect_options")}</div>
+                <div class="row">
+                  <ha-entity-picker id="tank_temp_entity${i}" label="${this._localize("common.temp_entity")}" domain-filter="sensor"></ha-entity-picker>
+                </div>
+                <div class="row">
+                  <label>${this._localize("editor.fire_image")}</label>
+                  <input id="tank_fire_image${i}" placeholder="/local/fire.gif">
+                </div>
+                <div class="row inline">
+                  <div><label>${this._localize("common.min_temp")}</label><input id="tank_min_temp${i}" type="number" step="any"></div>
+                  <div><label>${this._localize("common.min_color")}</label><input id="tank_min_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                </div>
+                <div class="row inline">
+                  <div><label>${this._localize("common.max_temp")}</label><input id="tank_max_temp${i}" type="number" step="any"></div>
+                  <div><label>${this._localize("common.max_color")}</label><input id="tank_max_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                </div>
+              </div>
+
               <div class="row" style="text-align: right; margin-top: 8px;">
                  <button id="remove_tank${i}" style="color: red;">${this._localize("common.remove")}</button>
               </div>
@@ -2469,6 +2745,19 @@ class BombaCalorCardEditor extends HTMLElement {
             this._config = { ...this._config, water_tanks: tanks };
             this._updateConfig();
         });
+        root.getElementById(`tank_style${i}`).addEventListener("change", (e) => {
+            if (this._isUpdatingValues || !e.target.value) return;
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], style: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+
+            const fireOptions = this.shadowRoot.getElementById(`fire_options_${i}`);
+            if (fireOptions) {
+                fireOptions.style.display = e.target.value === 'fire' ? 'block' : 'none';
+            }
+        });
+        root.getElementById(`tank_style${i}`).addEventListener("closed", (e) => e.stopPropagation());
         root.getElementById(`remove_tank${i}`).addEventListener("click", () => {
             const tanks = [...this._config.water_tanks];
             tanks.splice(i, 1);
@@ -2569,6 +2858,43 @@ class BombaCalorCardEditor extends HTMLElement {
             const fans = [...this._config.fans];
             fans[i] = { ...fans[i], reverse: e.target.checked };
             this._config = { ...this._config, fans };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_temp_entity${i}`).addEventListener("value-changed", (e) => {
+            if (this._isUpdatingValues) return;
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], temp_entity: e.detail.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_min_temp${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], min_temp: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_min_color${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], min_color: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_max_temp${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], max_temp: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_max_color${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], max_color: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_fire_image${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], fire_image: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
             this._updateConfig();
         });
         root.getElementById(`remove_fan${i}`).addEventListener("click", () => {
@@ -3236,6 +3562,24 @@ class BombaCalorCardEditor extends HTMLElement {
         setVal(`tank_bubble_color${i}`, tank.bubble_color || "#ffffff");
         setVal(`tank_state${i}`, tank.state_on || "");
         setVal(`tank_threshold${i}`, tank.threshold || "");
+        const stylePicker = root.getElementById(`tank_style${i}`);
+        if (stylePicker) {
+            stylePicker.value = tank.style || "bubbles";
+            const fireOptions = this.shadowRoot.getElementById(`fire_options_${i}`);
+            if (fireOptions) {
+                fireOptions.style.display = stylePicker.value === 'fire' ? 'block' : 'none';
+            }
+        }
+        const tempPicker = root.getElementById(`tank_temp_entity${i}`);
+        if (tempPicker) {
+            tempPicker.value = tank.temp_entity || "";
+            if (this._hass) tempPicker.hass = this._hass;
+        }
+        setVal(`tank_min_temp${i}`, tank.min_temp || "");
+        setVal(`tank_min_color${i}`, tank.min_color || "#0000ff");
+        setVal(`tank_max_temp${i}`, tank.max_temp || "");
+        setVal(`tank_max_color${i}`, tank.max_color || "#ff0000");
+        setVal(`tank_fire_image${i}`, tank.fire_image || "");
     });
 
     // Update Fans
