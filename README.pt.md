@@ -9,9 +9,9 @@
 Um cartão personalizado para Home Assistant focado na visualização de sistemas de Bomba de Calor, com animações de fluxo, ventiladores e tubagens.
 
 <p align="center">
-  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/docs/preview.gif?raw=true" alt="Preview Cartão em Funcionamento Bomba de Calor" width="48%">
+  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/preview.gif?raw=true" alt="Preview Cartão em Funcionamento Bomba de Calor" width="48%">
   &nbsp;
-  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/docs/previewp.gif?raw=true" alt="Preview Cartão Caldeira Pellets" width="48%">
+  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/previewp.gif?raw=true" alt="Preview Cartão Caldeira Pellets" width="48%">
 </p>
 
 ## Instalação via HACS
@@ -116,4 +116,5 @@ Crie representações visuais do fluido a passar nos tubos:
 ## Licença
 
 Este projeto está licenciado sob a licença MIT - veja o ficheiro LICENSE para mais detalhes.
+
 Basicamente: pode usar, modificar e distribuir livremente, mas sem garantias de funcionamento ou responsabilidade por parte do autor.
