@@ -5,7 +5,7 @@
  * Repo: https://github.com/sfelectronica/bomba-calor-card
  */
 
-console.info("%c BOMBA-CALOR-CARD %c 1.1.6 ", "color: white; background: #2681DC; font-weight: bold;", "color: #2681DC; background: white; font-weight: bold;");
+console.info("%c BOMBA-CALOR-CARD %c 1.3.1 ", "color: white; background: #2681DC; font-weight: bold;", "color: #2681DC; background: white; font-weight: bold;");
 
 const translations = {
   pt: {
@@ -32,6 +32,11 @@ const translations = {
     "common.icon_color": "Cor Icon",
     "common.font_weight": "Peso da Fonte",
     "common.trigger": "Entidade Gatilho",
+    "common.decimals": "Decimais",
+    "common.unit": "Unidade (Opcional)",
+    "common.multiply": "Multiplicar por",
+    "common.hide_state": "Ocultar Estado",
+    "common.enable_blink": "Piscar nos Limites",
     "common.color_start": "Cor Início",
     "common.color_end": "Cor Fim",
     "common.width": "Largura",
@@ -49,6 +54,7 @@ const translations = {
     "common.min_color": "Cor Mínima",
     "common.max_color": "Cor Máxima",
     "common.smoke_entity": "Entidade para Fumo",
+    "common.icon_size": "Tamanho Ícone",
     "common.smoke_temp_threshold": "Temp. para Fumo",
     "common.smoke_color": "Cor do Fumo",
     "common.skew": "Skew",
@@ -59,7 +65,7 @@ const translations = {
     "common.view_box_desc": "Define a área de coordenadas do SVG. Ex: '0 0 100 180' cria uma grelha de 100x180 unidades sobre a imagem.",
     "editor.switch": "Configuração do Switch",
     "editor.low_performance": "Modo Baixo Desempenho (Sem Blur)",
-    "editor.switch_entity": "Switch da bomba",
+    "editor.switch_entity": "Switch",
     "editor.language_settings": "Idiomas",
     "editor.select_language": "Selecione o Idioma",
     "editor.language_label": "Idioma / Language",
@@ -82,8 +88,33 @@ const translations = {
     "editor.tank_style_waves": "Ondas",
     "editor.tank_style_ripple": "Ondulação",
     "editor.tank_style_fire": "Fogo / Aquecimento",
+    "editor.tank_style_jet": "Jato / Funil",
     "editor.fire_effect_options": "Opções (Efeito Fogo)",
+    "editor.dynamic_color_options": "Opções de Cor Dinâmica",
     "editor.fire_image": "URL do GIF de Fogo",
+    "editor.interactive_flame": "Chama Interativa (Tamanho Variável)",
+    "editor.particle_density": "Densidade de Partículas",
+    "editor.switches": "Switches Adicionais",
+    "common.text_on": "Texto Ligado",
+    "common.text_off": "Texto Desligado",
+    "common.icon_on": "Ícone Ligado",
+    "common.icon_off": "Ícone Desligado",
+    "common.color_on": "Cor Ligado",
+    "common.color_off": "Cor Desligado",
+    "common.button_style": "Estilo do Botão",
+    "editor.style_default": "Padrão",
+    "editor.style_square": "Quadrado",
+    "editor.style_round": "Redondo",
+    "editor.style_transparent": "Transparente",
+    "common.conditional_entity": "Visibilidade (Entidade)",
+    "common.conditional_state": "Visibilidade (Estado)",
+    "common.tap_action": "Ação ao Clicar",
+    "common.tap_action_value": "Caminho / Serviço",
+    "editor.action_more_info": "Mais Info",
+    "editor.action_toggle": "Alternar (Toggle)",
+    "editor.action_navigate": "Navegar",
+    "editor.action_call_service": "Chamar Serviço",
+    "editor.action_none": "Nenhuma",
   },
   en: {
     "common.image": "Image",
@@ -109,6 +140,11 @@ const translations = {
     "common.icon_color": "Icon Color",
     "common.font_weight": "Font Weight",
     "common.trigger": "Trigger Entity",
+    "common.decimals": "Decimals",
+    "common.unit": "Unit (Optional)",
+    "common.multiply": "Multiply by",
+    "common.hide_state": "Hide State",
+    "common.enable_blink": "Blink on Threshold",
     "common.color_start": "Start Color",
     "common.color_end": "End Color",
     "common.width": "Width",
@@ -126,6 +162,7 @@ const translations = {
     "common.min_color": "Min Color",
     "common.max_color": "Max Color",
     "common.smoke_entity": "Smoke Entity",
+    "common.icon_size": "Icon Size",
     "common.smoke_temp_threshold": "Smoke Temp Threshold",
     "common.smoke_color": "Smoke Color",
     "common.skew": "Skew",
@@ -136,7 +173,7 @@ const translations = {
     "common.view_box_desc": "Defines the SVG coordinate area. Ex: '0 0 100 180' creates a 100x180 unit grid over the image.",
     "editor.switch": "Switch Configuration",
     "editor.low_performance": "Low Performance Mode (No Blur)",
-    "editor.switch_entity": "Pump Switch",
+    "editor.switch_entity": "Switch",
     "editor.language_settings": "Languages",
     "editor.select_language": "Select Language",
     "editor.language_label": "Language",
@@ -159,8 +196,33 @@ const translations = {
     "editor.tank_style_waves": "Waves",
     "editor.tank_style_ripple": "Ripple",
     "editor.tank_style_fire": "Fire / Heating",
+    "editor.tank_style_jet": "Jet / Funnel",
     "editor.fire_effect_options": "Options (Fire Effect)",
+    "editor.dynamic_color_options": "Dynamic Color Options",
     "editor.fire_image": "Fire GIF URL",
+    "editor.interactive_flame": "Interactive Flame (Variable Size)",
+    "editor.particle_density": "Particle Density",
+    "editor.switches": "Additional Switches",
+    "common.text_on": "Text On",
+    "common.text_off": "Text Off",
+    "common.icon_on": "Icon On",
+    "common.icon_off": "Icon Off",
+    "common.color_on": "Color On",
+    "common.color_off": "Color Off",
+    "common.button_style": "Button Style",
+    "editor.style_default": "Default",
+    "editor.style_square": "Square",
+    "editor.style_round": "Round",
+    "editor.style_transparent": "Transparent",
+    "common.conditional_entity": "Visibility (Entity)",
+    "common.conditional_state": "Visibility (State)",
+    "common.tap_action": "Tap Action",
+    "common.tap_action_value": "Path / Service",
+    "editor.action_more_info": "More Info",
+    "editor.action_toggle": "Toggle",
+    "editor.action_navigate": "Navigate",
+    "editor.action_call_service": "Call Service",
+    "editor.action_none": "None",
   },
   es: {
     "common.image": "Imagen",
@@ -186,6 +248,11 @@ const translations = {
     "common.icon_color": "Color Ícono",
     "common.font_weight": "Peso de Fuente",
     "common.trigger": "Entidad Disparador",
+    "common.decimals": "Decimales",
+    "common.unit": "Unidad (Opcional)",
+    "common.multiply": "Multiplicar por",
+    "common.hide_state": "Ocultar Estado",
+    "common.enable_blink": "Parpadear en Límites",
     "common.color_start": "Color Inicio",
     "common.color_end": "Color Fin",
     "common.width": "Ancho",
@@ -203,6 +270,7 @@ const translations = {
     "common.min_color": "Color Mínimo",
     "common.max_color": "Color Máximo",
     "common.smoke_entity": "Entidad de Humo",
+    "common.icon_size": "Tamaño Ícono",
     "common.smoke_temp_threshold": "Umbral Temp. Humo",
     "common.smoke_color": "Color del Humo",
     "common.skew": "Sesgar (Skew)",
@@ -213,7 +281,7 @@ const translations = {
     "common.view_box_desc": "Define el área de coordenadas SVG. Ej: '0 0 100 180' crea una cuadrícula de 100x180 unidades.",
     "editor.switch": "Configuración del Interruptor",
     "editor.low_performance": "Modo Bajo Rendimiento (Sin Blur)",
-    "editor.switch_entity": "Interruptor Bomba",
+    "editor.switch_entity": "Interruptor",
     "editor.language_settings": "Idiomas",
     "editor.select_language": "Seleccionar Idioma",
     "editor.language_label": "Idioma / Language",
@@ -236,8 +304,33 @@ const translations = {
     "editor.tank_style_waves": "Olas",
     "editor.tank_style_ripple": "Ondulación",
     "editor.tank_style_fire": "Fuego / Calefacción",
+    "editor.tank_style_jet": "Chorro / Embudo",
     "editor.fire_effect_options": "Opciones (Efecto Fuego)",
+    "editor.dynamic_color_options": "Opciones de Color Dinámico",
     "editor.fire_image": "URL del GIF de Fuego",
+    "editor.interactive_flame": "Llama Interactiva (Tamaño Variable)",
+    "editor.particle_density": "Densidad de Partículas",
+    "editor.switches": "Interruptores Adicionales",
+    "common.text_on": "Texto Encendido",
+    "common.text_off": "Texto Apagado",
+    "common.icon_on": "Ícono Encendido",
+    "common.icon_off": "Ícono Apagado",
+    "common.color_on": "Color Encendido",
+    "common.color_off": "Color Apagado",
+    "common.button_style": "Estilo del Botón",
+    "editor.style_default": "Por Defecto",
+    "editor.style_square": "Cuadrado",
+    "editor.style_round": "Redondo",
+    "editor.style_transparent": "Transparente",
+    "common.conditional_entity": "Visibilidad (Entidad)",
+    "common.conditional_state": "Visibilidad (Estado)",
+    "common.tap_action": "Acción al Pulsar",
+    "common.tap_action_value": "Ruta / Servicio",
+    "editor.action_more_info": "Más Info",
+    "editor.action_toggle": "Alternar (Toggle)",
+    "editor.action_navigate": "Navegar",
+    "editor.action_call_service": "Llamar Servicio",
+    "editor.action_none": "Ninguna",
   },
   fr: {
     "common.image": "Image",
@@ -263,6 +356,11 @@ const translations = {
     "common.icon_color": "Couleur Icône",
     "common.font_weight": "Poids de la Police",
     "common.trigger": "Entité Déclencheur",
+    "common.decimals": "Décimales",
+    "common.unit": "Unité (Optionnel)",
+    "common.multiply": "Multiplier par",
+    "common.hide_state": "Masquer l'État",
+    "common.enable_blink": "Clignoter aux Seuils",
     "common.color_start": "Couleur Début",
     "common.color_end": "Couleur Fin",
     "common.width": "Largeur",
@@ -280,6 +378,7 @@ const translations = {
     "common.min_color": "Couleur Min",
     "common.max_color": "Couleur Max",
     "common.smoke_entity": "Entité Fumée",
+    "common.icon_size": "Taille Icône",
     "common.smoke_temp_threshold": "Seuil Temp. Fumée",
     "common.smoke_color": "Couleur Fumée",
     "common.skew": "Biais (Skew)",
@@ -290,7 +389,7 @@ const translations = {
     "common.view_box_desc": "Définit la zone de coordonnées SVG. Ex: '0 0 100 180' crée une grille de 100x180 unités.",
     "editor.switch": "Configuration de l'Interrupteur",
     "editor.low_performance": "Mode Basse Performance (Sans Flou)",
-    "editor.switch_entity": "Interrupteur Pompe",
+    "editor.switch_entity": "Interrupteur",
     "editor.language_settings": "Langues",
     "editor.select_language": "Choisir la Langue",
     "editor.language_label": "Langue / Language",
@@ -313,8 +412,33 @@ const translations = {
     "editor.tank_style_waves": "Vagues",
     "editor.tank_style_ripple": "Ondulation",
     "editor.tank_style_fire": "Feu / Chauffage",
+    "editor.tank_style_jet": "Jet / Entonnoir",
     "editor.fire_effect_options": "Options (Effet Feu)",
+    "editor.dynamic_color_options": "Options de Couleur Dynamique",
     "editor.fire_image": "URL GIF Feu",
+    "editor.interactive_flame": "Flamme Interactive (Taille Variable)",
+    "editor.particle_density": "Densité des Particules",
+    "editor.switches": "Interrupteurs Supplémentaires",
+    "common.text_on": "Texte Allumé",
+    "common.text_off": "Texte Éteint",
+    "common.icon_on": "Icône Allumé",
+    "common.icon_off": "Icône Éteint",
+    "common.color_on": "Couleur Allumé",
+    "common.color_off": "Couleur Éteint",
+    "common.button_style": "Style du Bouton",
+    "editor.style_default": "Défaut",
+    "editor.style_square": "Carré",
+    "editor.style_round": "Rond",
+    "editor.style_transparent": "Transparent",
+    "common.conditional_entity": "Visibilité (Entité)",
+    "common.conditional_state": "Visibilité (État)",
+    "common.tap_action": "Action au Clic",
+    "common.tap_action_value": "Chemin / Service",
+    "editor.action_more_info": "Plus d'infos",
+    "editor.action_toggle": "Basculer (Toggle)",
+    "editor.action_navigate": "Naviguer",
+    "editor.action_call_service": "Appeler Service",
+    "editor.action_none": "Aucune",
   },
   de: {
     "common.image": "Bild",
@@ -340,6 +464,11 @@ const translations = {
     "common.icon_color": "Symbolfarbe",
     "common.font_weight": "Schriftgewicht",
     "common.trigger": "Auslöser-Entität",
+    "common.decimals": "Dezimalstellen",
+    "common.unit": "Einheit (Optional)",
+    "common.multiply": "Multiplizieren mit",
+    "common.hide_state": "Status Ausblenden",
+    "common.enable_blink": "Blinken bei Grenzwerten",
     "common.color_start": "Startfarbe",
     "common.color_end": "Endfarbe",
     "common.width": "Breite",
@@ -357,6 +486,7 @@ const translations = {
     "common.min_color": "Min. Farbe",
     "common.max_color": "Max. Farbe",
     "common.smoke_entity": "Rauch-Entität",
+    "common.icon_size": "Symbolgröße",
     "common.smoke_temp_threshold": "Rauch-Temp-Schwelle",
     "common.smoke_color": "Rauchfarbe",
     "common.skew": "Neigen (Skew)",
@@ -367,7 +497,7 @@ const translations = {
     "common.view_box_desc": "Definiert den SVG-Koordinatenbereich. Bsp: '0 0 100 180' erstellt ein 100x180 Einheitenraster.",
     "editor.switch": "Schalter Konfiguration",
     "editor.low_performance": "Niedrige Leistung (Kein Blur)",
-    "editor.switch_entity": "Pumpenschalter",
+    "editor.switch_entity": "Schalter",
     "editor.language_settings": "Sprachen",
     "editor.select_language": "Sprache Auswählen",
     "editor.language_label": "Sprache / Language",
@@ -390,8 +520,33 @@ const translations = {
     "editor.tank_style_waves": "Wellen",
     "editor.tank_style_ripple": "Welligkeit",
     "editor.tank_style_fire": "Feuer / Heizung",
+    "editor.tank_style_jet": "Strahl / Trichter",
     "editor.fire_effect_options": "Optionen (Feuer-Effekt)",
+    "editor.dynamic_color_options": "Dynamische Farboptionen",
     "editor.fire_image": "Feuer GIF URL",
+    "editor.interactive_flame": "Interaktive Flamme (Variable Größe)",
+    "editor.particle_density": "Teilchendichte",
+    "editor.switches": "Zusätzliche Schalter",
+    "common.text_on": "Text Ein",
+    "common.text_off": "Text Aus",
+    "common.icon_on": "Symbol Ein",
+    "common.icon_off": "Symbol Aus",
+    "common.color_on": "Farbe Ein",
+    "common.color_off": "Farbe Aus",
+    "common.button_style": "Knopfstil",
+    "editor.style_default": "Standard",
+    "editor.style_square": "Quadratisch",
+    "editor.style_round": "Rund",
+    "editor.style_transparent": "Transparente",
+    "common.conditional_entity": "Sichtbarkeit (Entität)",
+    "common.conditional_state": "Sichtbarkeit (Status)",
+    "common.tap_action": "Klick-Aktion",
+    "common.tap_action_value": "Pfad / Dienst",
+    "editor.action_more_info": "Mehr Infos",
+    "editor.action_toggle": "Umschalten",
+    "editor.action_navigate": "Navigieren",
+    "editor.action_call_service": "Dienst aufrufen",
+    "editor.action_none": "Keine",
   }
 };
 
@@ -408,6 +563,15 @@ class BombaCalorCard extends HTMLElement {
     if (!this.config.icon_colors) this.config.icon_colors = [];
     if (!this.config.font_sizes) this.config.font_sizes = [];
     if (!this.config.font_weights) this.config.font_weights = [];
+    if (!this.config.decimals) this.config.decimals = [];
+    if (!this.config.units) this.config.units = [];
+    if (!this.config.multipliers) this.config.multipliers = [];
+    if (!this.config.hide_states) this.config.hide_states = [];
+    if (!this.config.enable_blinks) this.config.enable_blinks = [];
+    if (!this.config.conditional_entities) this.config.conditional_entities = [];
+    if (!this.config.conditional_states) this.config.conditional_states = [];
+    if (!this.config.tap_actions) this.config.tap_actions = [];
+    if (!this.config.tap_action_values) this.config.tap_action_values = [];
     if (!this.config.icon_thresholds_low) this.config.icon_thresholds_low = [];
     if (!this.config.icon_thresholds_high) this.config.icon_thresholds_high = [];
     if (!this.config.icon_colors_low) this.config.icon_colors_low = [];
@@ -425,6 +589,7 @@ class BombaCalorCard extends HTMLElement {
     if (!this.config.water_tanks) this.config.water_tanks = [];
     if (!this.config.fans) this.config.fans = [];
     if (!this.config.pumps) this.config.pumps = [];
+    if (!this.config.switches) this.config.switches = [];
     if (!this.config.language) this.config.language = "auto";
 
     if (!this.shadowRoot) {
@@ -441,6 +606,13 @@ class BombaCalorCard extends HTMLElement {
 
   render() {
     const root = this.shadowRoot;
+    
+    // Cálculo dinâmico do Aspect Ratio baseado na View Box
+    const vb = this.config.view_box.trim().split(/\s+/).map(Number);
+    const vbWidth = vb[2] || 100;
+    const vbHeight = vb[3] || 180;
+    const ratio = (vbHeight / vbWidth) * 100;
+
     root.innerHTML = `
       <style>
         :host { display: block; }
@@ -450,7 +622,7 @@ class BombaCalorCard extends HTMLElement {
         .container {
           position: relative;
           width: 100%;
-          padding-top: 180%;
+          padding-top: ${ratio}%;
         }
         .bg-image {
           position: absolute;
@@ -629,6 +801,25 @@ class BombaCalorCard extends HTMLElement {
           0% { transform: translateY(0) scale(0.5); opacity: 0; }
           20% { opacity: 0.4; }
           100% { transform: translateY(-30px) scale(2); opacity: 0; }
+        }
+        .jet-particle {
+          opacity: 0;
+        }
+        .jet-active {
+          animation: jet-anim 0.8s linear infinite;
+        }
+        @keyframes jet-anim {
+          0% { transform: translate(0, 0); opacity: 0; }
+          15% { opacity: 1; }
+          100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+        .blink-active {
+          animation: blink-anim 1s infinite;
+        }
+        @keyframes blink-anim {
+          0% { opacity: 1; }
+          50% { opacity: 0.4; }
+          100% { opacity: 1; }
         }
       </style>
       <ha-card>
@@ -944,6 +1135,13 @@ class BombaCalorCard extends HTMLElement {
         const style = tank.style || 'bubbles';
         const color = tank.bubble_color || "rgba(255,255,255,0.7)";
         
+        // Aplicar rotação ao grupo de animação se definido
+        if (tank.rotate) {
+            const cx = tank.width / 2;
+            const cy = tank.height / 2;
+            animGroup.setAttribute("transform", `rotate(${tank.rotate}, ${cx}, ${cy})`);
+        }
+        
         let tankElData = { config: tank, group: animGroup };
 
         if (style === 'waves') {
@@ -1014,6 +1212,57 @@ class BombaCalorCard extends HTMLElement {
              animGroup.appendChild(overlay);
              
              tankElData.fireOverlay = overlay;
+             tankElData.fireImage = img;
+        } else if (style === 'jet') {
+            // Efeito Jato / Funil
+            const particleCount = tank.particle_count || 12;
+            const startX = tank.width / 2;
+            const startY = 0; // Começa no topo (relativo à rotação)
+            
+            for (let j = 0; j < particleCount; j++) {
+                const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                
+                // Se reverse = true, o movimento é de baixo para cima (converge)
+                // Se reverse = false, o movimento é de cima para baixo (espalha)
+                const isReverse = tank.reverse === true;
+                
+                // Espalhamento aleatório na base (cone)
+                const spreadX = (Math.random() - 0.5) * tank.width * 1.5; 
+                
+                line.setAttribute("x1", startX);
+                line.setAttribute("y1", startY);
+                line.setAttribute("x2", startX);
+                line.setAttribute("y2", startY + (tank.height * 0.3)); // Comprimento do traço
+                line.setAttribute("stroke", color);
+                line.setAttribute("stroke-width", Math.random() * 2 + 1);
+                line.setAttribute("stroke-linecap", "round");
+                line.classList.add("jet-particle", "jet-active");
+                
+                // Definir variáveis CSS para a animação
+                // tx: Deslocamento X final, ty: Deslocamento Y final
+                const targetX = spreadX;
+                const targetY = tank.height;
+                
+                if (isReverse) {
+                    // Inverso: Começa espalhado em baixo e vai para o centro em cima
+                    line.setAttribute("x1", startX + spreadX);
+                    line.setAttribute("y1", tank.height);
+                    line.setAttribute("x2", startX + spreadX);
+                    line.setAttribute("y2", tank.height - (tank.height * 0.3));
+                    
+                    line.style.setProperty('--tx', `${-spreadX}px`);
+                    line.style.setProperty('--ty', `${-tank.height}px`);
+                } else {
+                    // Normal: Começa no centro em cima e espalha para baixo
+                    line.style.setProperty('--tx', `${targetX}px`);
+                    line.style.setProperty('--ty', `${targetY}px`);
+                }
+
+                line.style.animationDelay = `${Math.random() * 0.8}s`;
+                line.style.animationDuration = `${0.6 + Math.random() * 0.4}s`;
+                
+                animGroup.appendChild(line);
+            }
         } else {
             // Bubbles (Default)
             for (let b = 0; b < 5; b++) {
@@ -1117,6 +1366,14 @@ class BombaCalorCard extends HTMLElement {
       // Se não houver entidade definida, ignoramos
       // Verifica também se está visível (padrão true se undefined)
       if (!ent || this.config.visible[idx] === false) return;
+
+      // Visibilidade Condicional
+      const condEnt = this.config.conditional_entities?.[idx];
+      const condState = this.config.conditional_states?.[idx] || "on";
+      if (condEnt) {
+          const stateObj = this._hass.states[condEnt];
+          if (!stateObj || stateObj.state !== condState) return;
+      }
       
       const p = this.config.positions[idx] || defaultPositions[idx];
       const name = this.config.names[idx] || `Nome ${idx + 1}`;
@@ -1127,6 +1384,7 @@ class BombaCalorCard extends HTMLElement {
       const fontSize = this.config.font_sizes[idx] || "";
       const fontWeight = this.config.font_weights[idx] || "normal";
       const showLabel = this.config.show_labels[idx] !== false;
+      const hideState = this.config.hide_states[idx] === true;
       const defPos = defaultPositions[idx] || { left: 5, top: 90 };
 
       // Calcula a cor de fundo com a opacidade configurada
@@ -1151,7 +1409,7 @@ class BombaCalorCard extends HTMLElement {
         ${showLabel ? `<div class="entity-label">${name}</div>` : ""}
         <div class="entity-value" style="color: ${color}; background: ${bgStyle}; font-weight: ${fontWeight}; ${fontSize ? `font-size: ${fontSize};` : ''}">
           ${icon ? `<ha-icon icon="${icon}" style="--mdc-icon-size: 14px; color: ${iconColor};"></ha-icon>` : ""}
-          <span class="state-value">--</span>
+          ${!hideState ? `<span class="state-value">--</span>` : ""}
         </div>
       `;
       
@@ -1181,6 +1439,36 @@ class BombaCalorCard extends HTMLElement {
       cont.appendChild(swDiv);
       this.switchEl = swDiv;
     }
+
+    // Renderizar Switches Adicionais
+    this.extraSwitchEls = [];
+    (this.config.switches || []).forEach((swConfig, i) => {
+        const div = document.createElement("div");
+        div.classList.add("entity");
+        div.style.left = (swConfig.left || 50) + "%";
+        div.style.top = (swConfig.top || 50) + "%";
+
+        const showLabel = swConfig.show_label !== false;
+        const name = swConfig.name || "";
+
+        if (showLabel && name) {
+            const labelDiv = document.createElement('div');
+            labelDiv.className = 'entity-label';
+            labelDiv.textContent = name;
+            div.appendChild(labelDiv);
+        }
+
+        const button = document.createElement("div");
+        button.classList.add("switch");
+        button.addEventListener("click", (e) => {
+             e.stopPropagation();
+             if (!this._hass) return;
+             this._hass.callService("switch", "toggle", { entity_id: swConfig.entity });
+        });
+        div.appendChild(button);
+        cont.appendChild(div);
+        this.extraSwitchEls.push({ config: swConfig, el: button });
+    });
 
     // animação de fluxo
     const flowPos = this.config.flow_position || { left: 40, top: 55 };
@@ -1258,6 +1546,31 @@ class BombaCalorCard extends HTMLElement {
   _handleEntityClick(e, entityId, index) {
     e.stopPropagation();
     
+    const action = this.config.tap_actions?.[index] || "more-info";
+    const actionValue = this.config.tap_action_values?.[index] || "";
+
+    if (action === "none") return;
+
+    if (action === "toggle") {
+        this._hass.callService("homeassistant", "toggle", { entity_id: entityId });
+        return;
+    }
+
+    if (action === "navigate" && actionValue) {
+        window.history.pushState(null, "", actionValue);
+        const event = new Event("location-changed", { bubbles: true, composed: true });
+        window.dispatchEvent(event);
+        return;
+    }
+
+    if (action === "call-service" && actionValue) {
+        const [domain, service] = actionValue.split(".");
+        if (domain && service) {
+            this._hass.callService(domain, service, { entity_id: entityId });
+        }
+        return;
+    }
+
     // Detecção manual robusta de modo de edição percorrendo a árvore DOM
     let isEditing = false;
     let el = this;
@@ -1307,15 +1620,23 @@ class BombaCalorCard extends HTMLElement {
         return;
       }
 
+      // Se o elemento de valor não existir (hide_state), saltamos a atualização de texto
+      if (!el) return;
+
       let value = st.state;
 
-      // número -> 1 casa decimal
+      // número -> casas decimais configuráveis (padrão 1)
       const num = Number(value);
       if (!Number.isNaN(num)) {
-        value = num.toFixed(1);
+        // Multiplicador
+        const mult = this.config.multipliers && this.config.multipliers[idx] !== "" && this.config.multipliers[idx] !== undefined ? parseFloat(this.config.multipliers[idx]) : 1;
+        const finalNum = num * mult;
+
+        const decimals = this.config.decimals && this.config.decimals[idx] !== "" && this.config.decimals[idx] !== undefined ? parseInt(this.config.decimals[idx]) : 1;
+        value = finalNum.toFixed(decimals);
       }
 
-      const unit = st.attributes.unit_of_measurement || "";
+      const unit = (this.config.units && this.config.units[idx]) ? this.config.units[idx] : (st.attributes.unit_of_measurement || "");
       el.textContent = `${value} ${unit}`.trim();
 
       // Lógica de Cor Dinâmica do Ícone
@@ -1328,6 +1649,8 @@ class BombaCalorCard extends HTMLElement {
         const lowT = (lowT_val !== null && lowT_val !== "" && lowT_val !== undefined) ? parseFloat(String(lowT_val).replace(',', '.')) : NaN;
         const highT = (highT_val !== null && highT_val !== "" && highT_val !== undefined) ? parseFloat(String(highT_val).replace(',', '.')) : NaN;
 
+        const enableBlink = this.config.enable_blinks[idx] === true;
+        let shouldBlink = false;
         const lowC = this.config.icon_colors_low[idx] || "#448aff";
         const highC = this.config.icon_colors_high[idx] || "#ff5252";
         
@@ -1339,13 +1662,21 @@ class BombaCalorCard extends HTMLElement {
         } else if (!isNaN(val)) {
             if (!isNaN(highT) && val > highT) {
                 iconEl.style.color = highC;
+                if (enableBlink) shouldBlink = true;
             } else if (!isNaN(lowT) && val < lowT) {
                 iconEl.style.color = lowC;
+                if (enableBlink) shouldBlink = true;
             } else {
                 iconEl.style.color = defaultColor;
             }
         } else {
             iconEl.style.color = defaultColor;
+        }
+
+        // Aplica animação de piscar ao container do badge (.entity-value)
+        const badgeContainer = iconEl.closest('.entity-value');
+        if (badgeContainer) {
+            shouldBlink ? badgeContainer.classList.add("blink-active") : badgeContainer.classList.remove("blink-active");
         }
       }
     });
@@ -1403,7 +1734,7 @@ class BombaCalorCard extends HTMLElement {
 
     // Atualizar Tanques
     this.tankEls.forEach((tankData) => {
-        const { config, group, fireOverlay } = tankData;
+        const { config, group, fireOverlay, fireImage } = tankData;
         const stateObj = this._hass.states[config.entity];
         const isActive = this._isActive(config, stateObj);
 
@@ -1415,7 +1746,7 @@ class BombaCalorCard extends HTMLElement {
             group.style.display = isActive ? "block" : "none";
         }
 
-        if (isActive && config.style === 'fire' && fireOverlay) {
+        if (isActive && (config.style === 'fire' || config.style === 'jet')) {
             const tempState = this._hass.states[config.temp_entity];
             if (tempState) {
                 const currentTemp = parseFloat(tempState.state);
@@ -1425,9 +1756,30 @@ class BombaCalorCard extends HTMLElement {
                 const maxColor = config.max_color || '#ff0000';
 
                 if (!isNaN(currentTemp) && !isNaN(minTemp) && !isNaN(maxTemp) && maxTemp > minTemp) {
-                    const factor = (currentTemp - minTemp) / (maxTemp - minTemp);
+                    let factor = (currentTemp - minTemp) / (maxTemp - minTemp);
+                    factor = Math.max(0, Math.min(1, factor)); // Clamp entre 0 e 1
+                    
                     const baseColor = this._interpolateColor(minColor, maxColor, factor);
-                    fireOverlay.setAttribute('fill', baseColor);
+                    
+                    if (config.style === 'fire' && fireOverlay) {
+                        fireOverlay.setAttribute('fill', baseColor);
+
+                        // Lógica de Chama Interativa (Tamanho)
+                        if (config.interactive_flame && fireImage) {
+                            const scale = 0.2 + (factor * 0.8); // 20% a 100%
+                            const cx = config.width / 2;
+                            const cy = config.height;
+                            const transform = `translate(${cx}, ${cy}) scale(${scale}) translate(${-cx}, ${-cy})`;
+                            fireImage.setAttribute("transform", transform);
+                            fireOverlay.setAttribute("transform", transform);
+                        } else if (fireImage) {
+                            fireImage.removeAttribute("transform");
+                            fireOverlay.removeAttribute("transform");
+                        }
+                    } else if (config.style === 'jet') {
+                        const particles = group.querySelectorAll('.jet-particle');
+                        particles.forEach(p => p.setAttribute('stroke', baseColor));
+                    }
                 }
             }
         }
@@ -1448,14 +1800,107 @@ class BombaCalorCard extends HTMLElement {
         isActive ? el.classList.add("spin-active") : el.classList.remove("spin-active");
     });
 
+    // Atualizar Switches Adicionais
+    this.extraSwitchEls.forEach(({ config, el }) => {
+        const stateObj = this._hass.states[config.entity];
+        if (stateObj) {
+            const isOn = stateObj.state === "on";
+            const textOn = config.text_on || "ON";
+            const textOff = config.text_off || "OFF";
+            const colorOn = config.color_on || "rgba(0,150,0,0.7)";
+            const colorOff = config.color_off || "rgba(100,0,0,0.7)";
+            const iconOn = config.icon_on;
+            const iconOff = config.icon_off;
+            const iconSize = config.icon_size ? `${config.icon_size}px` : '1.2em';
+            const fontSize = config.size ? `${config.size}px` : '';
+            const style = config.style || 'default';
+
+            if (fontSize) {
+                el.style.fontSize = fontSize;
+            }
+
+            if (style === 'transparent') {
+                el.style.background = 'transparent';
+                el.style.boxShadow = 'none';
+                const iconColor = isOn ? colorOn : colorOff;
+                if (isOn && iconOn) {
+                    el.innerHTML = `<ha-icon icon="${iconOn}" style="color: ${iconColor}; --mdc-icon-size: ${iconSize};"></ha-icon>`;
+                } else if (!isOn && iconOff) {
+                    el.innerHTML = `<ha-icon icon="${iconOff}" style="color: ${iconColor}; --mdc-icon-size: ${iconSize};"></ha-icon>`;
+                } else {
+                    el.style.color = iconColor;
+                    el.textContent = isOn ? textOn : textOff;
+                }
+            } else {
+                el.style.background = isOn ? colorOn : colorOff;
+                el.style.boxShadow = '';
+                if (style === 'round') el.style.borderRadius = '50%';
+                else if (style === 'square') el.style.borderRadius = '0px';
+                else el.style.borderRadius = '6px';
+
+                if (isOn && iconOn) {
+                    el.innerHTML = `<ha-icon icon="${iconOn}" style="color: white; --mdc-icon-size: ${iconSize};"></ha-icon>`;
+                } else if (!isOn && iconOff) {
+                    el.innerHTML = `<ha-icon icon="${iconOff}" style="color: white; --mdc-icon-size: ${iconSize};"></ha-icon>`;
+                } else {
+                    el.style.color = 'white';
+                    el.textContent = isOn ? textOn : textOff;
+                }
+            }
+        }
+    });
+
     if (this.config.switch && this.switchEl) {
       const sw = this._hass.states[this.config.switch];
       if (sw) {
-        this.switchEl.textContent = sw.state === "on" ? "ON" : "OFF";
-        this.switchEl.style.background =
-          sw.state === "on" ? "rgba(0,150,0,0.7)" : "rgba(100,0,0,0.7)";
+        const isOn = sw.state === "on";
+        
+        // Personalização do Switch Principal
+        const textOn = this.config.switch_text_on || "ON";
+        const textOff = this.config.switch_text_off || "OFF";
+        const colorOn = this.config.switch_color_on || "rgba(0,150,0,0.7)";
+        const colorOff = this.config.switch_color_off || "rgba(100,0,0,0.7)";
+        const iconOn = this.config.switch_icon_on;
+        const iconOff = this.config.switch_icon_off;
+        const iconSize = this.config.switch_icon_size ? `${this.config.switch_icon_size}px` : '1.2em';
+        const fontSize = this.config.switch_size ? `${this.config.switch_size}px` : '';
+        const style = this.config.switch_style || 'default';
+
+        if (fontSize) {
+            this.switchEl.style.fontSize = fontSize;
+        }
+        
+        if (style === 'transparent') {
+            this.switchEl.style.background = 'transparent';
+            this.switchEl.style.boxShadow = 'none';
+            const iconColor = isOn ? colorOn : colorOff;
+            if (isOn && iconOn) {
+                this.switchEl.innerHTML = `<ha-icon icon="${iconOn}" style="color: ${iconColor}; --mdc-icon-size: ${iconSize};"></ha-icon>`;
+            } else if (!isOn && iconOff) {
+                this.switchEl.innerHTML = `<ha-icon icon="${iconOff}" style="color: ${iconColor}; --mdc-icon-size: ${iconSize};"></ha-icon>`;
+            } else {
+                this.switchEl.style.color = iconColor;
+                this.switchEl.textContent = isOn ? textOn : textOff;
+            }
+        } else {
+            this.switchEl.style.background = isOn ? colorOn : colorOff;
+            this.switchEl.style.boxShadow = '';
+            if (style === 'round') this.switchEl.style.borderRadius = '50%';
+            else if (style === 'square') this.switchEl.style.borderRadius = '0px';
+            else this.switchEl.style.borderRadius = '6px';
+
+            if (isOn && iconOn) {
+                this.switchEl.innerHTML = `<ha-icon icon="${iconOn}" style="color: white; --mdc-icon-size: ${iconSize};"></ha-icon>`;
+            } else if (!isOn && iconOff) {
+                this.switchEl.innerHTML = `<ha-icon icon="${iconOff}" style="color: white; --mdc-icon-size: ${iconSize};"></ha-icon>`;
+            } else {
+                this.switchEl.style.color = 'white';
+                this.switchEl.textContent = isOn ? textOn : textOff;
+            }
+        }
+
         if (this.flowEl) {
-          if (sw.state === "on") this.flowEl.classList.add("flow");
+          if (isOn) this.flowEl.classList.add("flow");
           else this.flowEl.classList.remove("flow");
         }
       }
@@ -1472,13 +1917,36 @@ class BombaCalorCard extends HTMLElement {
 
   static getStubConfig() {
     return {
-      image: "/local/cardbomba.jpg",
-      entities: [],
-      names: [],
-      positions: [],
-      switch: "",
-      switch_position: { left: 10, top: 50 },
-      flow_position: { left: 40, top: 55 },
+        image: "https://github.com/sfelectronica/bomba-calor-card/raw/main/BombaGold.png",
+        entities: [
+            "sensor.example_temp",
+            "sensor.example_power"
+        ],
+        names: [
+            "Temperatura",
+            "Potência"
+        ],
+        icons: [
+            "mdi:thermometer",
+            "mdi:flash"
+        ],
+        positions: [
+            { left: 20, top: 20 },
+            { left: 80, top: 20 }
+        ],
+        animations: [
+            {
+                entity: "binary_sensor.example_flow",
+                path: "M 20,50 L 80,50"
+            }
+        ],
+        fans: [
+            {
+                entity: "switch.example_fan",
+                x: 50,
+                y: 80
+            }
+        ]
     };
   }
 }
@@ -1498,11 +1966,13 @@ class BombaCalorCardEditor extends HTMLElement {
     const defaults = {
       image: "/local/cardbomba.jpg",
       entities: [], names: [], colors: [], icons: [], badge_colors: [], icon_colors: [],
-      font_sizes: [], font_weights: [], icon_thresholds_low: [], icon_thresholds_high: [],
+      font_sizes: [], font_weights: [], decimals: [], units: [], multipliers: [], hide_states: [], enable_blinks: [], conditional_entities: [], conditional_states: [], tap_actions: [], tap_action_values: [], icon_thresholds_low: [], icon_thresholds_high: [],
       icon_colors_low: [], icon_colors_high: [], visible: [], show_labels: [], positions: [],
       animations: [], water_tanks: [], fans: [], pumps: [],
       view_box: "0 0 100 180",
       switch_position: { left: 10, top: 50 },
+      switches: [],
+      switch_style: 'default',
       flow_position: { left: 40, top: 55 },
       badge_opacity: 0.4,
       image_opacity: 1,
@@ -1518,10 +1988,10 @@ class BombaCalorCardEditor extends HTMLElement {
     }
 
     // Garante mínimo de 11 itens para as arrays de entidades
-    const entityArrays = ['entities', 'names', 'colors', 'icons', 'badge_colors', 'icon_colors', 'font_sizes', 'font_weights', 'icon_thresholds_low', 'icon_thresholds_high', 'icon_colors_low', 'icon_colors_high', 'visible', 'show_labels', 'positions'];
+    const entityArrays = ['entities', 'names', 'colors', 'icons', 'badge_colors', 'icon_colors', 'font_sizes', 'font_weights', 'decimals', 'units', 'multipliers', 'hide_states', 'enable_blinks', 'conditional_entities', 'conditional_states', 'tap_actions', 'tap_action_values', 'icon_thresholds_low', 'icon_thresholds_high', 'icon_colors_low', 'icon_colors_high', 'visible', 'show_labels', 'positions'];
     const defaultValues = {
       entities: "", names: "", colors: "#ffffff", icons: "", badge_colors: "", icon_colors: "#ffffff",
-      font_sizes: "", font_weights: "normal", icon_thresholds_low: "", icon_thresholds_high: "",
+      font_sizes: "", font_weights: "normal", decimals: "", units: "", multipliers: "", hide_states: false, enable_blinks: false, conditional_entities: "", conditional_states: "", tap_actions: "more-info", tap_action_values: "", icon_thresholds_low: "", icon_thresholds_high: "",
       icon_colors_low: "", icon_colors_high: "", visible: true, show_labels: true, positions: {}
     };
 
@@ -1591,9 +2061,10 @@ class BombaCalorCardEditor extends HTMLElement {
     const currentTanks = this.shadowRoot.querySelectorAll(".tank-block").length;
     const currentFans = this.shadowRoot.querySelectorAll(".fan-block").length;
     const currentPumps = this.shadowRoot.querySelectorAll(".pump-block").length;
+    const currentSwitches = this.shadowRoot.querySelectorAll(".switch-block").length;
     
     // +3 blocos estáticos (Switch/Idioma/Backup).
-    if (container && currentVersion === "18" && currentEntities === this._config.entities.length + 3 && currentAnims === this._config.animations.length && currentTanks === this._config.water_tanks.length && currentFans === this._config.fans.length && currentPumps === this._config.pumps.length) {
+    if (container && currentVersion === "20" && currentEntities === this._config.entities.length + 3 && currentAnims === this._config.animations.length && currentTanks === this._config.water_tanks.length && currentFans === this._config.fans.length && currentPumps === this._config.pumps.length && currentSwitches === this._config.switches.length) {
       this._updateValues();
       return;
     }
@@ -1620,7 +2091,7 @@ class BombaCalorCardEditor extends HTMLElement {
         .section-title { font-weight: bold; margin-top: 16px; border-bottom: 1px solid #ccc; }
         .entity-block { margin-bottom: 8px; background: rgba(0,0,0,0.1); border-radius: 4px; }
         .anim-block { margin-bottom: 8px; background: rgba(0,0,0,0.1); border-radius: 4px; border-left: 4px solid #e6b800; }
-        .tank-block, .fan-block, .pump-block { margin-bottom: 8px; background: rgba(0,0,0,0.1); border-radius: 4px; border-left: 4px solid #00bcd4; }
+        .tank-block, .fan-block, .pump-block, .switch-block { margin-bottom: 8px; background: rgba(0,0,0,0.1); border-radius: 4px; border-left: 4px solid #00bcd4; }
         .card-config { max-height: 80vh; overflow-y: auto; padding-right: 4px; }
         .item-title { 
           display: flex;
@@ -1693,7 +2164,7 @@ class BombaCalorCardEditor extends HTMLElement {
         .preview-point { fill: red; stroke: white; stroke-width: 1px; }
         .preview-line { stroke: yellow; stroke-width: 2px; fill: none; stroke-dasharray: 4 2; }
       </style>
-      <div class="card-config" data-version="18">
+      <div class="card-config" data-version="20">
         <div class="row">
           <label>${this._localize("common.image")}</label>
           <input id="image">
@@ -1774,6 +2245,37 @@ class BombaCalorCardEditor extends HTMLElement {
                 <input id="switch_top" type="number" min="0" max="100">
               </div>
             </div>
+            <div class="row inline">
+              <div><label>${this._localize("common.text_on")}</label><input id="switch_text_on" placeholder="ON"></div>
+              <div><label>${this._localize("common.text_off")}</label><input id="switch_text_off" placeholder="OFF"></div>
+            </div>
+            <div class="row inline">
+              <div><label>${this._localize("common.color_on")}</label><input id="switch_color_on" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+              <div><label>${this._localize("common.color_off")}</label><input id="switch_color_off" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+            </div>
+            <div class="row inline">
+              <div style="flex-grow: 1;">
+                <label>${this._localize("common.icon_on")}</label>
+                <ha-icon-picker id="switch_icon_on"></ha-icon-picker>
+              </div>
+              <div style="flex-grow: 1;">
+                <label>${this._localize("common.icon_off")}</label>
+                <ha-icon-picker id="switch_icon_off"></ha-icon-picker>
+              </div>
+            </div>
+            <div class="row">
+              <label>${this._localize("common.button_style")}</label>
+              <ha-select id="switch_style">
+                <mwc-list-item value="default">${this._localize("editor.style_default")}</mwc-list-item>
+                <mwc-list-item value="square">${this._localize("editor.style_square")}</mwc-list-item>
+                <mwc-list-item value="round">${this._localize("editor.style_round")}</mwc-list-item>
+                <mwc-list-item value="transparent">${this._localize("editor.style_transparent")}</mwc-list-item>
+              </ha-select>
+            </div>
+            <div class="row inline">
+              <div><label>${this._localize("common.size")}</label><input id="switch_size" type="number" min="0" step="1" placeholder="px"></div>
+              <div><label>${this._localize("common.icon_size")}</label><input id="switch_icon_size" type="number" min="0" step="1" placeholder="px"></div>
+            </div>
           </div>
         </details>
 
@@ -1829,6 +2331,10 @@ class BombaCalorCardEditor extends HTMLElement {
                     <input id="show_label${i}" type="checkbox" style="width: auto; margin-right: 4px;">
                     <label for="show_label${i}" style="margin: 0; display: inline;">${this._localize("common.label")}</label>
                 </div>
+                <div class="row inline" style="align-items: center;">
+                    <input id="hide_state${i}" type="checkbox" style="width: auto; margin-right: 4px;">
+                    <label for="hide_state${i}" style="margin: 0; display: inline;">${this._localize("common.hide_state")}</label>
+                </div>
                 <div class="row inline" style="align-items: flex-end;">
                     <div style="flex-grow: 1;">
                         <ha-icon-picker id="icon${i}" label="${this._localize("common.icon")}"></ha-icon-picker>
@@ -1859,6 +2365,10 @@ class BombaCalorCardEditor extends HTMLElement {
                             <input id="icon_color_high${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;">
                         </div>
                     </div>
+                    <div style="margin-left: 10px; display: flex; align-items: center;">
+                        <input id="enable_blink${i}" type="checkbox" style="width: auto; margin-right: 4px;">
+                        <label for="enable_blink${i}" style="margin: 0; display: inline;">${this._localize("common.enable_blink")}</label>
+                    </div>
                 </div>
                 <div class="row inline" style="align-items: flex-end;">
                     <div style="flex-grow: 1;">
@@ -1879,6 +2389,45 @@ class BombaCalorCardEditor extends HTMLElement {
                     <div style="flex-grow: 1;">
                         <label>${this._localize("common.size")}</label>
                         <input id="font_size${i}" type="number" min="0" step="1" placeholder="px">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <label>${this._localize("common.decimals")}</label>
+                        <input id="decimals${i}" type="number" min="0" step="1" placeholder="1">
+                    </div>
+                </div>
+                <div class="row inline">
+                    <div style="flex-grow: 1;">
+                        <label>${this._localize("common.unit")}</label>
+                        <input id="unit${i}" placeholder="Auto">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <label>${this._localize("common.multiply")}</label>
+                        <input id="multiplier${i}" type="number" step="any" placeholder="1">
+                    </div>
+                </div>
+                <div class="row inline">
+                    <div style="flex-grow: 1;">
+                        <ha-entity-picker id="cond_ent${i}" label="${this._localize("common.conditional_entity")}" allow-custom-entity></ha-entity-picker>
+                    </div>
+                    <div style="width: 30%;">
+                        <label>${this._localize("common.conditional_state")}</label>
+                        <input id="cond_state${i}" placeholder="on">
+                    </div>
+                </div>
+                <div class="row inline">
+                    <div style="flex-grow: 1;">
+                        <label>${this._localize("common.tap_action")}</label>
+                        <ha-select id="tap_action${i}">
+                            <mwc-list-item value="more-info">${this._localize("editor.action_more_info")}</mwc-list-item>
+                            <mwc-list-item value="toggle">${this._localize("editor.action_toggle")}</mwc-list-item>
+                            <mwc-list-item value="navigate">${this._localize("editor.action_navigate")}</mwc-list-item>
+                            <mwc-list-item value="call-service">${this._localize("editor.action_call_service")}</mwc-list-item>
+                            <mwc-list-item value="none">${this._localize("editor.action_none")}</mwc-list-item>
+                        </ha-select>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <label>${this._localize("common.tap_action_value")}</label>
+                        <input id="tap_action_value${i}" placeholder="ex: /lovelace/home">
                     </div>
                 </div>
                 <div class="row">
@@ -1981,19 +2530,35 @@ class BombaCalorCardEditor extends HTMLElement {
                     <mwc-list-item value="waves">${this._localize("editor.tank_style_waves")}</mwc-list-item>
                     <mwc-list-item value="ripple">${this._localize("editor.tank_style_ripple")}</mwc-list-item>
                     <mwc-list-item value="fire">${this._localize("editor.tank_style_fire")}</mwc-list-item>
+                    <mwc-list-item value="jet">${this._localize("editor.tank_style_jet")}</mwc-list-item>
                 </ha-select>
               </div>
 
-              <div id="fire_options_${i}">
+              <div id="dynamic_color_group_${i}" style="display: none;">
                 <hr style="border: none; border-top: 1px solid #ccc; margin: 12px 0;">
-                <div style="font-weight: bold; margin-bottom: 8px;">${this._localize("editor.fire_effect_options")}</div>
+                <div style="font-weight: bold; margin-bottom: 8px;">${this._localize("editor.dynamic_color_options")}</div>
                 <div class="row">
                   <ha-entity-picker id="tank_temp_entity${i}" label="${this._localize("common.temp_entity")}" domain-filter="sensor"></ha-entity-picker>
                 </div>
-                <div class="row">
-                  <label>${this._localize("editor.fire_image")}</label>
-                  <input id="tank_fire_image${i}" placeholder="/local/fire.gif">
+                
+                <div id="fire_specific_${i}" style="display: none;">
+                    <div class="row">
+                      <label>${this._localize("editor.fire_image")}</label>
+                      <input id="tank_fire_image${i}" placeholder="/local/fire.gif">
+                    </div>
+                    <div class="row inline" style="align-items: center;">
+                        <label style="width: auto; margin-right: 10px;">${this._localize("editor.interactive_flame")}</label>
+                        <input id="tank_interactive_flame${i}" type="checkbox" style="width: auto;">
+                    </div>
                 </div>
+
+                <div id="jet_specific_${i}" style="display: none;">
+                    <div class="row">
+                        <label>${this._localize("editor.particle_density")}</label>
+                        <input id="tank_particle_count${i}" type="number" min="1" max="50">
+                    </div>
+                </div>
+
                 <div class="row inline">
                   <div><label>${this._localize("common.min_temp")}</label><input id="tank_min_temp${i}" type="number" step="any"></div>
                   <div><label>${this._localize("common.min_color")}</label><input id="tank_min_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
@@ -2002,6 +2567,11 @@ class BombaCalorCardEditor extends HTMLElement {
                   <div><label>${this._localize("common.max_temp")}</label><input id="tank_max_temp${i}" type="number" step="any"></div>
                   <div><label>${this._localize("common.max_color")}</label><input id="tank_max_color${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
                 </div>
+              </div>
+
+              <div class="row inline" style="align-items: center; margin-top: 8px;">
+                  <div style="flex-grow: 1;"><label>${this._localize("common.rotation")}</label><input id="tank_rotate${i}" type="number" placeholder="0"></div>
+                  <div style="display: flex; align-items: center;"><label style="margin-right: 5px;">${this._localize("common.reverse")}</label><input id="tank_reverse${i}" type="checkbox"></div>
               </div>
 
               <div class="row" style="text-align: right; margin-top: 8px;">
@@ -2098,6 +2668,64 @@ class BombaCalorCardEditor extends HTMLElement {
           </details>
         `).join("")}
         <div class="row"><button id="add_pump">${this._localize("common.add")}</button></div>
+
+        <div class="section-title">${this._localize("editor.switches")}</div>
+        ${this._config.switches.map((sw, i) => {
+          const swName = sw.name || `Switch ${i + 1}`;
+          return `
+          <details class="switch-block" id="details_sw_${i}">
+            <summary class="item-title" style="background: #00bcd4; color: white;" id="summary_sw_${i}">${swName}</summary>
+            <div class="anim-content" style="border-color: #00bcd4;">
+              <div class="row">
+                <ha-entity-picker id="sw_ent${i}" label="${this._localize("editor.switch_entity")}" domain-filter="switch"></ha-entity-picker>
+              </div>
+              <div class="row">
+                <label>${this._localize("common.name")}</label>
+                <input id="sw_name${i}">
+              </div>
+              <div class="row inline" style="align-items: center;">
+                  <input id="sw_show_label${i}" type="checkbox" style="width: auto; margin-right: 4px;">
+                  <label for="sw_show_label${i}" style="margin: 0; display: inline;">${this._localize("common.label")}</label>
+              </div>
+              <div class="row">
+                 <button class="pos-btn" id="btn_sw_${i}" style="background-color: #00bcd4; color: white;">${this._localize("common.position")}</button>
+              </div>
+              <div class="row inline">
+                <div><label>${this._localize("common.left")}</label><input id="sw_left${i}" type="number" min="0" max="100"></div>
+                <div><label>${this._localize("common.top")}</label><input id="sw_top${i}" type="number" min="0" max="100"></div>
+              </div>
+              <div class="row inline">
+                <div><label>${this._localize("common.text_on")}</label><input id="sw_text_on${i}" placeholder="ON"></div>
+                <div><label>${this._localize("common.text_off")}</label><input id="sw_text_off${i}" placeholder="OFF"></div>
+              </div>
+              <div class="row inline">
+                <div><label>${this._localize("common.color_on")}</label><input id="sw_color_on${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+                <div><label>${this._localize("common.color_off")}</label><input id="sw_color_off${i}" type="color" style="height: 30px; width: 30px; padding: 0; border: 0;"></div>
+              </div>
+              <div class="row inline">
+                <div style="flex-grow: 1;"><label>${this._localize("common.icon_on")}</label><ha-icon-picker id="sw_icon_on${i}"></ha-icon-picker></div>
+                <div style="flex-grow: 1;"><label>${this._localize("common.icon_off")}</label><ha-icon-picker id="sw_icon_off${i}"></ha-icon-picker></div>
+              </div>
+              <div class="row">
+                <label>${this._localize("common.button_style")}</label>
+                <ha-select id="sw_style${i}">
+                    <mwc-list-item value="default">${this._localize("editor.style_default")}</mwc-list-item>
+                    <mwc-list-item value="square">${this._localize("editor.style_square")}</mwc-list-item>
+                    <mwc-list-item value="round">${this._localize("editor.style_round")}</mwc-list-item>
+                    <mwc-list-item value="transparent">${this._localize("editor.style_transparent")}</mwc-list-item>
+                </ha-select>
+              </div>
+              <div class="row inline">
+                <div><label>${this._localize("common.size")}</label><input id="sw_size${i}" type="number" min="0" step="1" placeholder="px"></div>
+                <div><label>${this._localize("common.icon_size")}</label><input id="sw_icon_size${i}" type="number" min="0" step="1" placeholder="px"></div>
+              </div>
+              <div class="row" style="text-align: right; margin-top: 8px;">
+                 <button id="remove_sw${i}" style="color: red;">${this._localize("common.remove")}</button>
+              </div>
+            </div>
+          </details>
+        `}).join("")}
+        <div class="row"><button id="add_sw">${this._localize("common.add")}</button></div>
 
       </div>
     `;
@@ -2371,6 +2999,15 @@ class BombaCalorCardEditor extends HTMLElement {
         this._closeModal();
         return;
       }
+      if (typeof this._posTarget === "string" && this._posTarget.startsWith("sw_")) {
+        const idx = parseInt(this._posTarget.replace("sw_", ""));
+        const switches = [...this._config.switches];
+        switches[idx] = { ...switches[idx], left: Math.round(left), top: Math.round(top) };
+        this._config = { ...this._config, switches };
+        this._updateConfig();
+        this._closeModal();
+        return;
+      }
 
       this._updateBadgePosition(left, top);
     });
@@ -2394,6 +3031,48 @@ class BombaCalorCardEditor extends HTMLElement {
     });
     root.getElementById("switch_top").addEventListener("change", (e) => {
       this._config.switch_position = { ...this._config.switch_position, top: Number(e.target.value) };
+      this._updateConfig();
+    });
+    root.getElementById("switch_text_on").addEventListener("change", (e) => {
+      this._config = { ...this._config, switch_text_on: e.target.value };
+      this._updateConfig();
+    });
+    root.getElementById("switch_text_off").addEventListener("change", (e) => {
+      this._config = { ...this._config, switch_text_off: e.target.value };
+      this._updateConfig();
+    });
+    root.getElementById("switch_color_on").addEventListener("change", (e) => {
+      this._config = { ...this._config, switch_color_on: e.target.value };
+      this._updateConfig();
+    });
+    root.getElementById("switch_color_off").addEventListener("change", (e) => {
+      this._config = { ...this._config, switch_color_off: e.target.value };
+      this._updateConfig();
+    });
+    root.getElementById("switch_icon_on").addEventListener("value-changed", (e) => {
+      if (this._isUpdatingValues) return;
+      if (this._config.switch_icon_on === e.detail.value) return;
+      this._config = { ...this._config, switch_icon_on: e.detail.value };
+      this._updateConfig();
+    });
+    root.getElementById("switch_icon_off").addEventListener("value-changed", (e) => {
+      if (this._isUpdatingValues) return;
+      if (this._config.switch_icon_off === e.detail.value) return;
+      this._config = { ...this._config, switch_icon_off: e.detail.value };
+      this._updateConfig();
+    });
+    root.getElementById("switch_style").addEventListener("change", (e) => {
+      if (this._isUpdatingValues || !e.target.value) return;
+      this._config = { ...this._config, switch_style: e.target.value };
+      this._updateConfig();
+    });
+    root.getElementById("switch_style").addEventListener("closed", (e) => e.stopPropagation());
+    root.getElementById("switch_size").addEventListener("change", (e) => {
+      this._config = { ...this._config, switch_size: e.target.value };
+      this._updateConfig();
+    });
+    root.getElementById("switch_icon_size").addEventListener("change", (e) => {
+      this._config = { ...this._config, switch_icon_size: e.target.value };
       this._updateConfig();
     });
     
@@ -2471,6 +3150,67 @@ class BombaCalorCardEditor extends HTMLElement {
           this._config = { ...this._config, font_sizes };
           this._updateConfig();
         });
+      
+      root.getElementById(`decimals${i}`).addEventListener("input", (e) => {
+          const decimals = [...(this._config.decimals || [])];
+          decimals[i] = e.target.value;
+          this._config = { ...this._config, decimals };
+          this._updateConfig();
+        });
+
+      root.getElementById(`unit${i}`).addEventListener("change", (e) => {
+          const units = [...(this._config.units || [])];
+          units[i] = e.target.value;
+          this._config = { ...this._config, units };
+          this._updateConfig();
+        });
+      root.getElementById(`multiplier${i}`).addEventListener("change", (e) => {
+          const multipliers = [...(this._config.multipliers || [])];
+          multipliers[i] = e.target.value;
+          this._config = { ...this._config, multipliers };
+          this._updateConfig();
+        });
+
+      root.getElementById(`hide_state${i}`).addEventListener("change", (e) => {
+          const hide_states = [...(this._config.hide_states || [])];
+          hide_states[i] = e.target.checked;
+          this._config = { ...this._config, hide_states };
+          this._updateConfig();
+        });
+      root.getElementById(`enable_blink${i}`).addEventListener("change", (e) => {
+          const enable_blinks = [...(this._config.enable_blinks || [])];
+          enable_blinks[i] = e.target.checked;
+          this._config = { ...this._config, enable_blinks };
+          this._updateConfig();
+        });
+      
+      root.getElementById(`cond_ent${i}`).addEventListener("value-changed", (e) => {
+          if (this._isUpdatingValues) return;
+          const conditional_entities = [...(this._config.conditional_entities || [])];
+          conditional_entities[i] = e.detail.value;
+          this._config = { ...this._config, conditional_entities };
+          this._updateConfig();
+      });
+      root.getElementById(`cond_state${i}`).addEventListener("change", (e) => {
+          const conditional_states = [...(this._config.conditional_states || [])];
+          conditional_states[i] = e.target.value;
+          this._config = { ...this._config, conditional_states };
+          this._updateConfig();
+      });
+      root.getElementById(`tap_action${i}`).addEventListener("change", (e) => {
+          if (this._isUpdatingValues || !e.target.value) return;
+          const tap_actions = [...(this._config.tap_actions || [])];
+          tap_actions[i] = e.target.value;
+          this._config = { ...this._config, tap_actions };
+          this._updateConfig();
+      });
+      root.getElementById(`tap_action${i}`).addEventListener("closed", (e) => e.stopPropagation());
+      root.getElementById(`tap_action_value${i}`).addEventListener("change", (e) => {
+          const tap_action_values = [...(this._config.tap_action_values || [])];
+          tap_action_values[i] = e.target.value;
+          this._config = { ...this._config, tap_action_values };
+          this._updateConfig();
+      });
 
       root.getElementById(`font_weight${i}`).addEventListener("change", (e) => {
           if (this._isUpdatingValues || !e.target.value) return;
@@ -2568,6 +3308,15 @@ class BombaCalorCardEditor extends HTMLElement {
           const icon_colors = [...(this._config.icon_colors || [])];
           const font_sizes = [...(this._config.font_sizes || [])];
           const font_weights = [...(this._config.font_weights || [])];
+          const decimals = [...(this._config.decimals || [])];
+          const units = [...(this._config.units || [])];
+          const multipliers = [...(this._config.multipliers || [])];
+          const hide_states = [...(this._config.hide_states || [])];
+          const enable_blinks = [...(this._config.enable_blinks || [])];
+          const conditional_entities = [...(this._config.conditional_entities || [])];
+          const conditional_states = [...(this._config.conditional_states || [])];
+          const tap_actions = [...(this._config.tap_actions || [])];
+          const tap_action_values = [...(this._config.tap_action_values || [])];
           const icon_thresholds_low = [...(this._config.icon_thresholds_low || [])];
           const icon_thresholds_high = [...(this._config.icon_thresholds_high || [])];
           const icon_colors_low = [...(this._config.icon_colors_low || [])];
@@ -2583,6 +3332,15 @@ class BombaCalorCardEditor extends HTMLElement {
           icons.splice(i, 1);
           font_sizes.splice(i, 1);
           font_weights.splice(i, 1);
+          decimals.splice(i, 1);
+          units.splice(i, 1);
+          multipliers.splice(i, 1);
+          hide_states.splice(i, 1);
+          enable_blinks.splice(i, 1);
+          conditional_entities.splice(i, 1);
+          conditional_states.splice(i, 1);
+          tap_actions.splice(i, 1);
+          tap_action_values.splice(i, 1);
           icon_thresholds_low.splice(i, 1);
           icon_thresholds_high.splice(i, 1);
           icon_colors_low.splice(i, 1);
@@ -2591,7 +3349,7 @@ class BombaCalorCardEditor extends HTMLElement {
           visible.splice(i, 1);
           show_labels.splice(i, 1);
           
-          this._config = { ...this._config, entities, names, positions, colors, badge_colors, icons, icon_colors, font_sizes, font_weights, icon_thresholds_low, icon_thresholds_high, icon_colors_low, icon_colors_high, visible, show_labels };
+          this._config = { ...this._config, entities, names, positions, colors, badge_colors, icons, icon_colors, font_sizes, font_weights, decimals, units, multipliers, hide_states, enable_blinks, conditional_entities, conditional_states, tap_actions, tap_action_values, icon_thresholds_low, icon_thresholds_high, icon_colors_low, icon_colors_high, visible, show_labels };
           this._updateConfig();
         });
     }
@@ -2752,12 +3510,78 @@ class BombaCalorCardEditor extends HTMLElement {
             this._config = { ...this._config, water_tanks: tanks };
             this._updateConfig();
 
-            const fireOptions = this.shadowRoot.getElementById(`fire_options_${i}`);
-            if (fireOptions) {
-                fireOptions.style.display = e.target.value === 'fire' ? 'block' : 'none';
-            }
+            const isFire = e.target.value === 'fire';
+            const isJet = e.target.value === 'jet';
+            const dynGroup = this.shadowRoot.getElementById(`dynamic_color_group_${i}`);
+            const fireSpec = this.shadowRoot.getElementById(`fire_specific_${i}`);
+            const jetSpec = this.shadowRoot.getElementById(`jet_specific_${i}`);
+            
+            if (dynGroup) dynGroup.style.display = (isFire || isJet) ? 'block' : 'none';
+            if (fireSpec) fireSpec.style.display = isFire ? 'block' : 'none';
+            if (jetSpec) jetSpec.style.display = isJet ? 'block' : 'none';
         });
         root.getElementById(`tank_style${i}`).addEventListener("closed", (e) => e.stopPropagation());
+        root.getElementById(`tank_temp_entity${i}`).addEventListener("value-changed", (e) => {
+            if (this._isUpdatingValues) return;
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], temp_entity: e.detail.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_min_temp${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], min_temp: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_min_color${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], min_color: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_max_temp${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], max_temp: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_max_color${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], max_color: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_fire_image${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], fire_image: e.target.value };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_interactive_flame${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], interactive_flame: e.target.checked };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_particle_count${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], particle_count: Number(e.target.value) };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_rotate${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], rotate: Number(e.target.value) };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
+        root.getElementById(`tank_reverse${i}`).addEventListener("change", (e) => {
+            const tanks = [...this._config.water_tanks];
+            tanks[i] = { ...tanks[i], reverse: e.target.checked };
+            this._config = { ...this._config, water_tanks: tanks };
+            this._updateConfig();
+        });
         root.getElementById(`remove_tank${i}`).addEventListener("click", () => {
             const tanks = [...this._config.water_tanks];
             tanks.splice(i, 1);
@@ -2860,43 +3684,6 @@ class BombaCalorCardEditor extends HTMLElement {
             this._config = { ...this._config, fans };
             this._updateConfig();
         });
-        root.getElementById(`tank_temp_entity${i}`).addEventListener("value-changed", (e) => {
-            if (this._isUpdatingValues) return;
-            const tanks = [...this._config.water_tanks];
-            tanks[i] = { ...tanks[i], temp_entity: e.detail.value };
-            this._config = { ...this._config, water_tanks: tanks };
-            this._updateConfig();
-        });
-        root.getElementById(`tank_min_temp${i}`).addEventListener("change", (e) => {
-            const tanks = [...this._config.water_tanks];
-            tanks[i] = { ...tanks[i], min_temp: e.target.value };
-            this._config = { ...this._config, water_tanks: tanks };
-            this._updateConfig();
-        });
-        root.getElementById(`tank_min_color${i}`).addEventListener("change", (e) => {
-            const tanks = [...this._config.water_tanks];
-            tanks[i] = { ...tanks[i], min_color: e.target.value };
-            this._config = { ...this._config, water_tanks: tanks };
-            this._updateConfig();
-        });
-        root.getElementById(`tank_max_temp${i}`).addEventListener("change", (e) => {
-            const tanks = [...this._config.water_tanks];
-            tanks[i] = { ...tanks[i], max_temp: e.target.value };
-            this._config = { ...this._config, water_tanks: tanks };
-            this._updateConfig();
-        });
-        root.getElementById(`tank_max_color${i}`).addEventListener("change", (e) => {
-            const tanks = [...this._config.water_tanks];
-            tanks[i] = { ...tanks[i], max_color: e.target.value };
-            this._config = { ...this._config, water_tanks: tanks };
-            this._updateConfig();
-        });
-        root.getElementById(`tank_fire_image${i}`).addEventListener("change", (e) => {
-            const tanks = [...this._config.water_tanks];
-            tanks[i] = { ...tanks[i], fire_image: e.target.value };
-            this._config = { ...this._config, water_tanks: tanks };
-            this._updateConfig();
-        });
         root.getElementById(`remove_fan${i}`).addEventListener("click", () => {
             const fans = [...this._config.fans];
             fans.splice(i, 1);
@@ -2983,6 +3770,111 @@ class BombaCalorCardEditor extends HTMLElement {
         });
     }
 
+    // Listeners para Switches Adicionais
+    root.getElementById("add_sw").addEventListener("click", () => {
+        const switches = [...this._config.switches, { left: 50, top: 50 }];
+        this._config = { ...this._config, switches };
+        this._updateConfig();
+    });
+    for (let i = 0; i < this._config.switches.length; i++) {
+        root.getElementById(`btn_sw_${i}`).addEventListener("click", () => this._openModal(`sw_${i}`));
+        root.getElementById(`sw_left${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], left: Number(e.target.value) };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_top${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], top: Number(e.target.value) };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_ent${i}`).addEventListener("value-changed", (e) => {
+            if (this._isUpdatingValues) return;
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], entity: e.detail.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_name${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], name: e.target.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_show_label${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], show_label: e.target.checked };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_text_on${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], text_on: e.target.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_text_off${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], text_off: e.target.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_color_on${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], color_on: e.target.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_color_off${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], color_off: e.target.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_icon_on${i}`).addEventListener("value-changed", (e) => {
+            if (this._isUpdatingValues) return;
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], icon_on: e.detail.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_icon_off${i}`).addEventListener("value-changed", (e) => {
+            if (this._isUpdatingValues) return;
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], icon_off: e.detail.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_style${i}`).addEventListener("change", (e) => {
+            if (this._isUpdatingValues || !e.target.value) return;
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], style: e.target.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_style${i}`).addEventListener("closed", (e) => e.stopPropagation());
+        root.getElementById(`sw_size${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], size: e.target.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`sw_icon_size${i}`).addEventListener("change", (e) => {
+            const switches = [...this._config.switches];
+            switches[i] = { ...switches[i], icon_size: e.target.value };
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+        root.getElementById(`remove_sw${i}`).addEventListener("click", () => {
+            const switches = [...this._config.switches];
+            switches.splice(i, 1);
+            this._config = { ...this._config, switches };
+            this._updateConfig();
+        });
+    }
+
     root.getElementById("add_entity").addEventListener("click", () => {
       const newConfig = { ...this._config };
       newConfig.entities = [...newConfig.entities, ""];
@@ -2993,6 +3885,15 @@ class BombaCalorCardEditor extends HTMLElement {
       newConfig.icon_colors = [...newConfig.icon_colors, "#ffffff"];
       newConfig.font_sizes = [...newConfig.font_sizes, ""];
       newConfig.font_weights = [...newConfig.font_weights, "normal"];
+      newConfig.decimals = [...newConfig.decimals, ""];
+      newConfig.units = [...newConfig.units, ""];
+      newConfig.multipliers = [...newConfig.multipliers, ""];
+      newConfig.hide_states = [...newConfig.hide_states, false];
+      newConfig.enable_blinks = [...newConfig.enable_blinks, false];
+      newConfig.conditional_entities = [...newConfig.conditional_entities, ""];
+      newConfig.conditional_states = [...newConfig.conditional_states, ""];
+      newConfig.tap_actions = [...newConfig.tap_actions, "more-info"];
+      newConfig.tap_action_values = [...newConfig.tap_action_values, ""];
       newConfig.icon_thresholds_low = [...newConfig.icon_thresholds_low, ""];
       newConfig.icon_thresholds_high = [...newConfig.icon_thresholds_high, ""];
       newConfig.icon_colors_low = [...newConfig.icon_colors_low, ""];
@@ -3201,6 +4102,13 @@ class BombaCalorCardEditor extends HTMLElement {
           const pumps = [...this._config.pumps];
           pumps[idx] = { ...pumps[idx], x: Math.round(absX), y: Math.round(absY) };
           this._config = { ...this._config, pumps };
+      } else if (typeof this._posTarget === "string" && this._posTarget.startsWith("sw_")) {
+          const idx = parseInt(this._posTarget.replace("sw_", ""));
+          const switches = [...this._config.switches];
+          const left = ((absX - minX) / width) * 100;
+          const top = ((absY - minY) / height) * 100;
+          switches[idx] = { ...switches[idx], left, top };
+          this._config = { ...this._config, switches };
       } else if (this._posTarget === "switch") {
         this._config.switch_position = { left, top };
       } else if (this._posTarget === "flow") {
@@ -3353,6 +4261,14 @@ class BombaCalorCardEditor extends HTMLElement {
         this._drawElementMarker(svg, pump.x, pump.y, "orange");
         this._appendTooltip(svg);
         return;
+    } else if (typeof this._posTarget === "string" && this._posTarget.startsWith("sw_")) {
+        const idx = parseInt(this._posTarget.replace("sw_", ""));
+        const sw = this._config.switches[idx];
+        const cx = minX + ((sw.left || 50) / 100) * width;
+        const cy = minY + ((sw.top || 50) / 100) * height;
+        this._drawElementMarker(svg, cx, cy, "purple");
+        this._appendTooltip(svg);
+        return;
     } else {
         const idx = parseInt(this._posTarget);
         if (!isNaN(idx)) {
@@ -3475,6 +4391,18 @@ class BombaCalorCardEditor extends HTMLElement {
     
     setVal("switch_left", cfg.switch_position.left);
     setVal("switch_top", cfg.switch_position.top);
+    setVal("switch_text_on", cfg.switch_text_on || "");
+    setVal("switch_text_off", cfg.switch_text_off || "");
+    setVal("switch_color_on", cfg.switch_color_on || "#009600");
+    setVal("switch_color_off", cfg.switch_color_off || "#640000");
+    if (root.getElementById("switch_icon_on")) root.getElementById("switch_icon_on").value = cfg.switch_icon_on || "";
+    if (root.getElementById("switch_icon_off")) root.getElementById("switch_icon_off").value = cfg.switch_icon_off || "";
+    const switchStyle = root.getElementById("switch_style");
+    if (switchStyle) {
+        switchStyle.value = cfg.switch_style || "default";
+    }
+    setVal("switch_size", cfg.switch_size || "");
+    setVal("switch_icon_size", cfg.switch_icon_size || "");
 
     const langPicker = root.getElementById("language");
     if (langPicker) {
@@ -3496,6 +4424,20 @@ class BombaCalorCardEditor extends HTMLElement {
       setVal(`badge_color${i}`, cfg.badge_colors[i] || "#000000");
       setVal(`icon_color${i}`, cfg.icon_colors[i] || "#ffffff");
       setVal(`font_size${i}`, parseFloat(cfg.font_sizes[i]) || "");
+      setVal(`decimals${i}`, cfg.decimals[i] || "");
+      setVal(`unit${i}`, cfg.units[i] || "");
+      setVal(`multiplier${i}`, cfg.multipliers[i] || "");
+      setCheck(`hide_state${i}`, cfg.hide_states[i] === true);
+      setCheck(`enable_blink${i}`, cfg.enable_blinks[i] === true);
+      
+      setVal(`cond_state${i}`, cfg.conditional_states[i] || "");
+      setVal(`tap_action_value${i}`, cfg.tap_action_values[i] || "");
+
+      const condEntPicker = root.getElementById(`cond_ent${i}`);
+      if (condEntPicker) {
+          condEntPicker.value = cfg.conditional_entities[i] || "";
+          if (this._hass) condEntPicker.hass = this._hass;
+      }
       
       setVal(`icon_threshold_low${i}`, cfg.icon_thresholds_low[i] || "");
       setVal(`icon_threshold_high${i}`, cfg.icon_thresholds_high[i] || "");
@@ -3505,6 +4447,11 @@ class BombaCalorCardEditor extends HTMLElement {
       const fontWeightPicker = root.getElementById(`font_weight${i}`);
       if (fontWeightPicker) {
         fontWeightPicker.value = cfg.font_weights[i] || 'normal';
+      }
+
+      const tapActionPicker = root.getElementById(`tap_action${i}`);
+      if (tapActionPicker) {
+          tapActionPicker.value = cfg.tap_actions[i] || 'more-info';
       }
       
       const iconPicker = root.getElementById(`icon${i}`);
@@ -3565,10 +4512,16 @@ class BombaCalorCardEditor extends HTMLElement {
         const stylePicker = root.getElementById(`tank_style${i}`);
         if (stylePicker) {
             stylePicker.value = tank.style || "bubbles";
-            const fireOptions = this.shadowRoot.getElementById(`fire_options_${i}`);
-            if (fireOptions) {
-                fireOptions.style.display = stylePicker.value === 'fire' ? 'block' : 'none';
-            }
+            
+            const isFire = stylePicker.value === 'fire';
+            const isJet = stylePicker.value === 'jet';
+            const dynGroup = this.shadowRoot.getElementById(`dynamic_color_group_${i}`);
+            const fireSpec = this.shadowRoot.getElementById(`fire_specific_${i}`);
+            const jetSpec = this.shadowRoot.getElementById(`jet_specific_${i}`);
+            
+            if (dynGroup) dynGroup.style.display = (isFire || isJet) ? 'block' : 'none';
+            if (fireSpec) fireSpec.style.display = isFire ? 'block' : 'none';
+            if (jetSpec) jetSpec.style.display = isJet ? 'block' : 'none';
         }
         const tempPicker = root.getElementById(`tank_temp_entity${i}`);
         if (tempPicker) {
@@ -3580,6 +4533,10 @@ class BombaCalorCardEditor extends HTMLElement {
         setVal(`tank_max_temp${i}`, tank.max_temp || "");
         setVal(`tank_max_color${i}`, tank.max_color || "#ff0000");
         setVal(`tank_fire_image${i}`, tank.fire_image || "");
+        setCheck(`tank_interactive_flame${i}`, tank.interactive_flame === true);
+        setVal(`tank_particle_count${i}`, tank.particle_count || 12);
+        setVal(`tank_rotate${i}`, tank.rotate || 0);
+        setCheck(`tank_reverse${i}`, tank.reverse === true);
     });
 
     // Update Fans
@@ -3620,6 +4577,37 @@ class BombaCalorCardEditor extends HTMLElement {
         setVal(`pump_speed${i}`, pump.speed || 1);
         setVal(`pump_threshold${i}`, pump.threshold || "");
         setCheck(`pump_reverse${i}`, pump.reverse === true);
+    });
+
+    // Update Switches
+    (cfg.switches || []).forEach((sw, i) => {
+        const entPicker = root.getElementById(`sw_ent${i}`);
+        if (entPicker) {
+            entPicker.value = sw.entity || "";
+            if (this._hass) entPicker.hass = this._hass;
+        }
+        setVal(`sw_left${i}`, sw.left);
+        setVal(`sw_top${i}`, sw.top);
+        setVal(`sw_text_on${i}`, sw.text_on || "");
+        setVal(`sw_text_off${i}`, sw.text_off || "");
+        setVal(`sw_color_on${i}`, sw.color_on || "#009600");
+        setVal(`sw_color_off${i}`, sw.color_off || "#640000");
+        if (root.getElementById(`sw_icon_on${i}`)) root.getElementById(`sw_icon_on${i}`).value = sw.icon_on || "";
+        if (root.getElementById(`sw_icon_off${i}`)) root.getElementById(`sw_icon_off${i}`).value = sw.icon_off || "";
+        const swStyle = root.getElementById(`sw_style${i}`);
+        if (swStyle) {
+            swStyle.value = sw.style || "default";
+        }
+
+        setVal(`sw_name${i}`, sw.name || "");
+        setCheck(`sw_show_label${i}`, sw.show_label !== false);
+        setVal(`sw_size${i}`, sw.size || "");
+        setVal(`sw_icon_size${i}`, sw.icon_size || "");
+
+        const summary = root.getElementById(`summary_sw_${i}`);
+        if (summary) {
+            summary.textContent = sw.name || `Switch ${i + 1}`;
+        }
     });
 
     this._isUpdatingValues = false;
@@ -3666,6 +4654,15 @@ class BombaCalorCardEditor extends HTMLElement {
       icon_colors: move(this._config.icon_colors, fromIndex, toIndex),
       font_sizes: move(this._config.font_sizes, fromIndex, toIndex),
       font_weights: move(this._config.font_weights, fromIndex, toIndex),
+      decimals: move(this._config.decimals, fromIndex, toIndex),
+      units: move(this._config.units, fromIndex, toIndex),
+      multipliers: move(this._config.multipliers, fromIndex, toIndex),
+      hide_states: move(this._config.hide_states, fromIndex, toIndex),
+      enable_blinks: move(this._config.enable_blinks, fromIndex, toIndex),
+      conditional_entities: move(this._config.conditional_entities, fromIndex, toIndex),
+      conditional_states: move(this._config.conditional_states, fromIndex, toIndex),
+      tap_actions: move(this._config.tap_actions, fromIndex, toIndex),
+      tap_action_values: move(this._config.tap_action_values, fromIndex, toIndex),
       icon_thresholds_low: move(this._config.icon_thresholds_low, fromIndex, toIndex),
       icon_thresholds_high: move(this._config.icon_thresholds_high, fromIndex, toIndex),
       icon_colors_low: move(this._config.icon_colors_low, fromIndex, toIndex),
@@ -3709,5 +4706,6 @@ window.customCards = window.customCards || [];
 window.customCards.push({
   type: "bomba-calor-card",
   name: "Bomba de Calor",
-  description: "Cartão bomba de calor",
+  description: "Cartão para visualização de sistemas de bomba de calor com animações.",
+  preview: true, // Ativa a pré-visualização dinâmica
 });

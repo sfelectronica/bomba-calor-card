@@ -8,8 +8,11 @@
 
 Um cartão personalizado para Home Assistant focado na visualização de sistemas de Bomba de Calor, com animações de fluxo, ventiladores e tubagens.
 
-<!-- Substitua 'preview.gif' pelo nome do seu ficheiro gif após fazer upload para o GitHub -->
-![Preview do Cartão em Funcionamento](preview.gif)
+<p align="center">
+  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/docs/preview.gif?raw=true" alt="Preview Cartão em Funcionamento Bomba de Calor" width="48%">
+  &nbsp;
+  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/docs/previewp.gif?raw=true" alt="Preview Cartão Caldeira Pellets" width="48%">
+</p>
 
 ## Instalação via HACS
 
@@ -61,33 +64,54 @@ Este cartão oferece um conjunto robusto de ferramentas para criar esquemas hidr
 
 ### 2. Gestão de Entidades
 *   Suporte para múltiplos sensores (temperaturas, pressões, consumos).
-*   Personalização completa: Nome, Ícone, Cor do Texto, Cor do Ícone e Cor de Fundo (Badge).
-*   Ajuste de tamanho de fonte individual.
-*   Opção para ocultar rótulos ou ícones.
-*   **Switch Principal:** Botão dedicado para ligar/desligar bomba de recirculação com indicador de estado visual.
+*   **Personalização Visual:** Nome, Ícone, Cor do Texto, Cor do Ícone e Cor de Fundo (Badge).
+*   **Ações de Clique (Tap Actions):** Configure o que acontece ao clicar numa entidade: abrir mais informações, alternar o estado (`toggle`), navegar para outra página do Home Assistant ou chamar um serviço.
+*   **Visibilidade Condicional:** Esconda ou mostre uma entidade com base no estado de outra (ex: mostrar temperatura dos painéis apenas se a bomba solar estiver ligada).
+*   **Formatação de Valores:**
+    *   **Unidade Personalizada:** Substitua a unidade de medida original (ex: de `W` para `Watts`) ou remova-a.
+    *   **Multiplicador:** Aplique um fator de multiplicação ao valor do sensor (útil para conversões como W -> kW).
+    *   **Casas Decimais:** Defina o número de casas decimais a exibir.
+*   **Ocultar Estado:** Mostre apenas o ícone da entidade, escondendo o valor numérico, para um visual mais limpo.
+*   **Alerta Visual:** Ative um efeito de piscar (blink) no badge da entidade quando o seu valor ultrapassa os limiares definidos.
 *   **Cores Dinâmicas:** Altere a cor do ícone automaticamente com base em valores limite (ex: Azul se < 10º, Vermelho se > 60º).
-*   **Estilo de Fonte:** Opção para escolher entre peso de fonte Normal ou Negrito (Bold).
+*   **Estilo de Fonte:** Ajuste individual do tamanho e peso da fonte (Normal ou Negrito).
 
-### 3. Animações de Fluxo (Tubagens)
+### 3. Switches e Botões
+*   **Switch Principal:** Botão dedicado para ligar/desligar um atuador principal (ex: bomba de recirculação).
+*   **Switches Adicionais:** Adicione múltiplos botões de controlo em qualquer parte do diagrama.
+*   **Personalização Completa:**
+    *   Defina textos, ícones e cores para os estados `ligado` e `desligado`.
+    *   Ajuste o tamanho do botão e do ícone.
+    *   Escolha o estilo do botão: **Padrão**, **Quadrado**, **Redondo** ou **Transparente** (neste modo, apenas o ícone/texto assume a cor do estado).
+    *   Adicione um rótulo de texto opcional acima de cada switch.
+
+### 4. Animações de Fluxo (Tubagens)
 Crie representações visuais do fluido a passar nos tubos:
-*   **Estilos de Linha:** Tracejado (Dashes), Pontos (Dots), **Shimmer** (Brilho), **Pulse** (Pulsação) e **Comet** (Cometa).
+*   **Estilos de Linha:** Tracejado (`Dashes`), Pontos (`Dots`), Brilho (`Shimmer`), Pulsação (`Pulse`) e Cometa (`Comet`).
 *   **Gradientes:** Defina cor inicial e final para simular aquecimento ou arrefecimento ao longo do tubo.
 *   **Lógica de Ativação:** As animações podem ser ativadas pelo estado da entidade (ex: "on") ou por um **Limiar Numérico** (ex: ativar apenas se potência > 20W).
 *   Controlo de velocidade, largura e tamanho do rastro.
 *   **Modo Baixo Desempenho:** Opção para desativar efeitos pesados (blur) para maior fluidez em dispositivos antigos.
 
-### 4. Componentes Dinâmicos
+### 5. Componentes Dinâmicos
 *   **Ventiladores:**
     *   Simulação 3D com ajuste de inclinação (Tilt) e perspetiva (Skew).
     *   Rotação animada com velocidade ajustável.
     *   Opção de rotação inversa.
 *   **Bombas Circuladoras:**
     *   Animação de rotor giratório.
-    *   Suporte para **Imagens Personalizadas** (carregue a sua própria imagem de bomba que irá rodar).
+    *   Suporte para **Imagens Personalizadas** (carregue a sua própria imagem de bomba, que irá rodar).
 *   **Tanques de Água:**
-    *   Visualização de reservatórios com efeito de bolhas, ondas, ondulação ou **Fogo**.
-    *   **Efeito de Fogo:** Utilize um GIF animado (suporta transparência) que muda de cor dinamicamente com base na temperatura. Util para usar com uma caldeira a pellets.
-    *   Cores e opacidade configuráveis.
+    *   **Estilos Visuais:** Bolhas (`Bubbles`), Ondas (`Waves`), Ondulação (`Ripple`), **Fogo** (`Fire`) e **Jato** (`Jet`).
+    *   **Efeito de Fogo (GIF):**
+        *   Suporte para GIFs animados com transparência.
+        *   **Coloração Dinâmica:** O fogo muda de cor (ex: Azul -> Vermelho) com base na temperatura definida.
+        *   **Chama Interativa:** Opção para **redimensionar automaticamente** a animação (aumentar/diminuir o tamanho da chama) proporcionalmente à temperatura.
+    *   **Efeito Jato (Jet):** Simula partículas a fluir (ex: enchimento de silos ou fluxo de ar).
+        *   Suporta modo inverso (efeito de funil/sucção).
+        *   Densidade de partículas ajustável.
+    *   **Rotação:** Permite rodar o tanque e o seu conteúdo (útil para tubos horizontais ou inclinados).
+    *   Cores, opacidade e dimensões configuráveis.
 
 ## Licença
 
