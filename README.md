@@ -9,9 +9,9 @@
 A custom card for Home Assistant focused on visualizing Heat Pump systems, featuring flow animations, fans, and piping.
 
 <p align="center">
-  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/docs/preview.gif?raw=true" alt="Preview Card - Heat Pump" width="48%">
+  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/preview.gif?raw=true" alt="Preview Card - Heat Pump" width="48%">
   &nbsp;
-  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/docs/previewp.gif?raw=true" alt="Preview Card - Pellet Boiler" width="48%">
+  <img src="https://github.com/sfelectronica/bomba-calor-card/blob/main/previewp.gif?raw=true" alt="Preview Card - Pellet Boiler" width="48%">
 </p>
 
 ## Installation via HACS
